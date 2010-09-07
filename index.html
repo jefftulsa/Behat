@@ -11,19 +11,27 @@
   
   <style type="text/css">
     body {
-      margin-top:0px;
+        margin:0px;
+        padding:0px;
        font-family: "Helvetica,Arial,FreeSans";
       color: #000000;
       background:url(/images/bg.jpg);
     }
     #container {
-      background:#fff;
+      background:#f0f0f0;
       opacity:0.8;
       padding:20px;
       margin: 0 auto;
       width: 700px;
+      -webkit-box-shadow:0px 0px 10px #000;
+      -moz-box-shadow:0px 0px 10px #000;
+      box-shadow:0px 0px 10px #000;
     }
     h1 { font-family:'Neuton', arial, serif; font-size: 3.8em; margin-top: 0px; margin-bottom: 3px; }
+    a.fork img {
+        z-index:100;
+    }
+    h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none; color: #000 !important; }
     h2 { font-size: 1.5em; color: #000; }
     h3 { text-align: center; color: #000; }
@@ -37,20 +45,22 @@
 </head>
 
 <body>
-  <a href="http://github.com/everzet/Behat"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <a class="fork" href="http://github.com/everzet/Behat"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
   <div id="container">
 
-    <h1><a href="http://github.com/everzet/Behat">Behat</a></h1>
+    <h1>
+        <a href="http://github.com/everzet/Behat">Behat</a>
+        <span class="small">BDD framework for PHP 5.3</span>
+    </h1>
 
-    <div class="description">
-      BDD framework for PHP 5.3
-    </div>
+    <p>Behavior Driver Development framework for PHP 5.3, based on Ruby Cucumber</p>
+    
+    <h2>License</h2>
+    <p><a href="http://creativecommons.org/licenses/MIT/">MIT</a></p>
 
-    <p>Behavior Driver Development framework for PHP 5.3, based on  Ruby Cucumber</p><h2>License</h2>
-<p>MIT</p>
-<h2>Authors</h2>
-<p>ever.zet (ever.zet@gmail.com)
+    <h2>Authors</h2>
+    <p>ever.zet (ever.zet@gmail.com)
 <br/>
 <br/>      </p>
 <h2>Contact</h2>
@@ -68,10 +78,6 @@
       by running:
       <pre>$ git clone git://github.com/everzet/Behat</pre>
     </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/everzet/Behat">everzet/Behat</a>
-    </div>
 
   </div>
 
