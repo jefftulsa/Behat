@@ -10,7 +10,8 @@
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'/> 
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'/> 
   <link href='http://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'/> 
-  <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="css/pygments.css" media="all"/>
 
   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min"></script>
@@ -18,6 +19,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
       var activeItem;
+      var menu = $('#menu');
 
       $('#preview dd').each(function() {
         $(this).hide();
@@ -28,9 +30,20 @@
         var el = $(this);
 
         if (activeItem) {
-          activeItem.slideUp(200);
+          activeItem.slideUp(200, function() {
+              activeItem = el.next().slideDown(500);
+          });
+        } else {
+            activeItem = el.next().slideDown(500);
         }
-        activeItem = el.next().slideDown(500);
+      });
+
+      $(window).scroll(function() {
+          if ($(this).scrollTop() >= 73) {
+              menu.css({position: 'fixed', top: 0, opacity: 0.9})
+          } else {
+              menu.css({position: 'absolute', top: 73, opacity: 1.0})
+          }
       });
     });
   </script>
@@ -46,68 +59,131 @@
     </h1>
 
     <ul id="menu">
-      <li><a href="#">install</a></li>
-      <li><a href="#">feature</a></li>
-      <li><a href="#">step definition</a></li>
-      <li><a href="#">env</a></li>
-      <li><a href="#">additional</a></li>
+      <li><a href="#install">install</a></li>
+      <li><a href="#feature">feature</a></li>
+      <li><a href="#step">step</a></li>
+      <li><a href="#env">env</a></li>
+      <li><a href="#cli">cli</a></li>
+      <li><a href="#additional">additional</a></li>
     </ul>
 
     <p class="intro">
-      <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">Behavior</a> driven development in PHP
+      Behavior driven development in <span class="php">PHP</span>
     </p>
 
     <dl id="preview">
-      <dt>1. <span>Describe</span> behavior as a <span>Feature</span> file</dt>
+      <dt>1. <span>Describe</span> behavior in <span>Feature</span> file</dt>
       <dd>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <img src="images/step_1.png" alt="Describe behavior in Feature file"/>
       </dd>
-      <dt>2. <span>Write</span> a step <span>definition</span> in PHP</dt>
+      <dt>2. <span>Create</span> testing <span>object definition</span></dt>
       <dd>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <img src="images/step_2.png" alt="Create testing object definition"/>
       </dd>
-      <dt>3. Run and <span>watch it fail</span></dt>
+      <dt>3. <span>Write</span> a step <span>definition</span> in PHP</dt>
       <dd>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <img src="images/step_3.png" alt="Write a step definition in PHP"/>
       </dd>
-      <dt>4. <span>Write code</span> to make the step pass</dt>
-      <dd>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <dt>4. Run and <span>watch it fail</span></dt>
+      <dd class="step_4">
+        <img src="images/step_4.png" alt="Run and watch it fail"/>
       </dd>
-      <dt>5. Run again and <span>see the step pass</span></dt>
+      <dt>5. <span>Write code</span> to make the step pass</dt>
       <dd>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <img src="images/step_5.png" alt="Write code to make the step pass"/>
       </dd>
-      <dt>6. <span>Repeat</span> 2-5 <span>until</span> you see only <span>green color</span></dt>
-      <dd>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <dt>6. Run again and <span>see the step pass</span></dt>
+      <dd class="step_6">
+        <img src="images/step_6.png" alt="Run again and see the step pass"/>
       </dd>
     </dl>
-    
-    
-    
-    <h2>License</h2>
-    <p><a href="http://creativecommons.org/licenses/MIT/">MIT</a></p>
 
-    <h2>Authors</h2>
-    <p>ever.zet (ever.zet@gmail.com)
-<br/>
-<br/>      </p>
-<h2>Contact</h2>
-<p>Kudryashov Konstantin (ever.zet@gmail.com)
-<br/>      </p>
+    <h2>Synopsis</h2>
+    <p>
+        Behat is an <a href="http://creativecommons.org/licenses/MIT/">open source</a> <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">behavior driven development</a> framework for php 5.3.
+    </p>
+    <p>
+        Behat was inspired by Ruby's <a href="http://cukes.info/">Cucumber</a> project and especially it's syntax part (<a href="http://wiki.github.com/aslakhellesoy/cucumber/gherkin">Gherkin</a>). It tries to be like Cucumber with input (Feature files) and output (console formatters), but in core, it built from the ground on the shoulders of giants:
+    </p>
+    <ul>
+        <li><a href="http://components.symfony-project.org/dependency-injection/">Symfony Dependency Injection component</a></li>
+        <li><a href="http://components.symfony-project.org/event-dispatcher/">Symfony Event Dispatcher component</a></li>
+        <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Console/">Symfony Console component</a></li>
+        <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Finder/">Symfony Finder component</a></li>
+    </ul>
+    <p>
+        Unlike any other php testing framework that tests applications inside out. Behat is testing applications outside in. It means, that Behat works only with your application's input/output. If you want to test your models - use unit testing framework instead, Behat created for behavior testing (but can be used for anything +) ).
+    </p>
 
-
-    <h2>Download</h2>
+    <h2 id="install">Install</h2>
     <p>
       You can download this project in either
       <a href="http://github.com/everzet/Behat/zipball/master">zip</a> or
       <a href="http://github.com/everzet/Behat/tarball/master">tar</a> formats.
     </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/everzet/Behat</pre>
+    <p>
+      You can also clone the project with <a href="http://git-scm.com">Git</a> by running:
     </p>
+<div class="hlcode"> 
+<div class="syntax"><pre><span class="nv">$ </span>git clone git://github.com/everzet/Behat
+</pre></div> 
+
+</div>
+    <p>
+      After downloading and unpacking - just call <code>path/to/Behat/bin/behat</code> from console to run behat tester.
+    </p>
+
+    <h2 id="feature">Feature</h2>
+    <p>Feature file explained. Here's basic feature description:</p>
+<div class="hlcode"> 
+<div class="syntax"><pre><span class="nn">@math</span> 
+<span class="nc">Feature:</span><span class="no"> Addition</span><span class="nb"></span> 
+<span class="nb">  In order to avoid silly mistakes</span> 
+<span class="nb">  As a math idiot</span> 
+<span class="nb">  I want to be told the sum of two numbers</span> 
+
+<span class="nb">  @wip @fast</span> 
+  <span class="nc">Scenario:</span><span class="no"> Add two numbers</span> 
+<span class="k">    Given </span>I have entered 50 into the calculator
+      <span class="k">And </span>I have entered 70 into the calculator
+     <span class="k">When </span>I press add
+     <span class="k">Then </span>The result should be 120 on the screen
+</pre></div> 
+
+    </div>
+
+
+    <h2 id="step">Step</h2>
+    <p></p>
+<div class="hlcode"> 
+<div class="syntax"><pre><span class="cp">&lt;?php</span> 
+
+<span class="nv">$steps</span><span class="o">-&gt;</span><span class="na">Given</span><span class="p">(</span><span class="s1">&#39;/^I have entered (\d+) into the calculator$/&#39;</span><span class="p">,</span> <span class="nc">function</span><span class="p">(</span><span class="nv">$world</span><span class="p">,</span> <span class="nv">$arg1</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">Everzet</span><span class="k">\</span><span class="nx">Behat</span><span class="k">\</span><span class="nx">Exception</span><span class="k">\</span><span class="nx">Pending</span><span class="p">(</span><span class="s1">&#39;Write code later&#39;</span><span class="p">);</span> 
+<span class="p">});</span>
+</pre></div>
+
+    <h2 id="env">Environment</h2>
+    <p></p>
+<div class="hlcode"> 
+<div class="syntax"><pre><span class="cp">&lt;?php</span> 
+
+<span class="k">require_once</span> <span class="s1">&#39;PHPUnit/Autoload.php&#39;</span><span class="p">;</span> 
+<span class="k">require_once</span> <span class="s1">&#39;PHPUnit/Framework/Assert/Functions.php&#39;</span><span class="p">;</span> 
+
+<span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/Calculator.php&#39;</span><span class="p">;</span> 
+</pre></div> 
+
+</div>
+
+    <h2 id="cli">CLI</h2>
+    <p></p>
+
+    <h2 id="additional">Additional</h2>
+    <p></p>
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   </div>
 
