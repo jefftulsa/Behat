@@ -47,12 +47,21 @@ h2 {
     width:250px;
 }
 p.intro {
-    margin-top:5px;
-    width:350px;
-    font-size:1.8em;
+    width:100%;
+    background:#eef0bb;
+    margin-top:-45px;
+    padding:10px;
+    padding-top:20px;
+    padding-left:25px;
+    padding-right:15px;
+    margin-left:-20px;
+    font-size:1.2em;
     line-height:1.0em;
-    color:#61ac27;
     font-style:italic;
+    color:#61ac27;
+}
+p.intro .bdd {
+    color:#000;
 }
 p.intro .php {
     color:#626aa1;
