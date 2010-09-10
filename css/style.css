@@ -18,6 +18,12 @@ body {
   -moz-box-shadow:0px 0px 10px #000;
   box-shadow:0px 0px 10px #000;
 }
+#fixed {
+    margin-top:0px;
+    margin-bottom:0px;
+    position:fixed;
+    top:0px;
+}
 h1 { font-family:'Lobster', arial, serif; font-size: 6em; margin-top: 0px; margin-bottom: 3px;
     font-weight:normal;
     text-shadow: 1px 1px 1px #fff;
@@ -98,7 +104,7 @@ ul, ol {
 
 .copyright {
     float:right;
-    margin-top:100px;
+    margin-top:320px;
     font-size:0.8em;
     color:#000;
 }

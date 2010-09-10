@@ -19,7 +19,9 @@
   <script type="text/javascript">
     $(document).ready(function() {
       var activeItem;
+      var activeH = $('#fixed');
       var menu = $('#menu');
+      var headers = $('h2:not(#fixed)');
 
       $('#preview dd').each(function() {
         $(this).hide();
@@ -39,12 +41,31 @@
       });
 
       $(window).scroll(function() {
-          if ($(this).scrollTop() >= 73) {
+          var winScrollTop = $(this).scrollTop();
+
+          if (winScrollTop >= 73) {
               menu.css({position: 'fixed', top: 0, opacity: 0.9})
           } else {
               menu.css({position: 'absolute', top: 73, opacity: 1.0})
           }
+
+          headers.css({opacity:1});
+
+          headers.each(function() {
+              var h = $(this);
+
+              if (winScrollTop > headers.eq(0).offset().top) {
+                  if (winScrollTop > (h.offset().top - 1)) {
+                      activeH.css({display:'block'});
+                      activeH.text(h.text());
+                      h.css({opacity:0});
+                  }
+              } else {
+                  activeH.css({display:'none'});
+              }
+          });
       });
+
     });
   </script>
 </head>
@@ -66,6 +87,8 @@
       <li><a href="#env">env</a></li>
       <li><a href="#cli">cli</a></li>
     </ul>
+
+    <h2 id="fixed"></h2>
 
     <p class="intro">
       <span class="bdd">Behavior driven development</span> for <span class="php">PHP</span>
@@ -98,7 +121,7 @@
       </dd>
     </dl>
 
-    <h2>Synopsis</h2>
+    <h2 id="synopsis">Synopsis</h2>
     <p>
         Behat is an <a href="http://creativecommons.org/licenses/MIT/">open source</a> <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">behavior driven development</a> framework for php 5.3.
     </p>
