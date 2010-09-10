@@ -143,6 +143,7 @@ code {
 #preview {
     float:left;
     margin:0px;
+    margin-top:-22px;
     margin-bottom:30px;
 }
 
