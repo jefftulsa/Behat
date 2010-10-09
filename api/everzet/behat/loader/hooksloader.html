@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
+<meta name="when" content="Sat, 09 Oct 2010 03:45:18 +0300">
+
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="start" href="../../../overview-summary.html">
+
+<title>HooksLoader (Behat)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>Behat</h1>
+<ul>
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../everzet/behat/loader/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../../../everzet/behat/loader/package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../../index.html" target="_top">Frames</a>
+<a href="../../../everzet/behat/loader/hooksloader.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">Everzet\Behat\Loader\HooksLoader</div>
+<div class="location">/Everzet/Behat/Loader/HooksLoader.php at line 20</div>
+
+<h1>Class HooksLoader</h1>
+
+<pre class="tree"><strong>HooksLoader</strong><br /></pre>
+
+<hr>
+
+<p class="signature">public  class <strong>HooksLoader</strong></p>
+
+<div class="comment" id="overview_description"><p>Event Hooks Loader.</p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>Konstantin Kudryashov <ever.zet@gmail.com></dd>
+</dl>
+<hr>
+
+<table id="summary_constr">
+<tr><th colspan="2">Constructor Summary</th></tr>
+<tr>
+<td class="description"><p class="name"><a href="#HooksLoader()">HooksLoader</a>(<a href="../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> dispatcher)</p><p class="description">Initialize loader.</p></td>
+</tr>
+</table>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#after()">after</a>(string context, string callback)</p><p class="description">Hook to `*.after` event.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#before()">before</a>(string context, string callback)</p><p class="description">Hook to `*.before` event.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../../../everzet/behat/loader/hooksloader.html">HooksLoader</a></td>
+<td class="description"><p class="name"><a href="#load()">load</a>(string|array paths)</p><p class="description">Load hooks from specified path(s).</p></td>
+</tr>
+</table>
+
+<h2 id="detail_constr">Constructor Detail</h2>
+<div class="location">/Everzet/Behat/Loader/HooksLoader.php at line 29</div>
+<h3 id="HooksLoader()">HooksLoader</h3>
+<code class="signature">public <strong>HooksLoader</strong>(<a href="../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> dispatcher)</code>
+<div class="details">
+<p>Initialize loader.</p><dl>
+<dt>Parameters:</dt>
+<dd>dispatcher - event dispatcher</dd>
+</dl>
+</div>
+
+<hr>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">/Everzet/Behat/Loader/HooksLoader.php at line 70</div>
+<h3 id="after()">after</h3>
+<code class="signature">public  void <strong>after</strong>(string context, string callback)</code>
+<div class="details">
+<p>Hook to `*.after` event.</p><dl>
+<dt>Parameters:</dt>
+<dd>context - context name (f.e. features.load => features.load.after event)</dd>
+<dd>callback - callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Loader/HooksLoader.php at line 59</div>
+<h3 id="before()">before</h3>
+<code class="signature">public  void <strong>before</strong>(string context, string callback)</code>
+<div class="details">
+<p>Hook to `*.before` event.</p><dl>
+<dt>Parameters:</dt>
+<dd>context - context name (f.e. features.load => features.load.before event)</dd>
+<dd>callback - callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Loader/HooksLoader.php at line 41</div>
+<h3 id="load()">load</h3>
+<code class="signature">public  <a href="../../../everzet/behat/loader/hooksloader.html">HooksLoader</a> <strong>load</strong>(string|array paths)</code>
+<div class="details">
+<p>Load hooks from specified path(s).</p><dl>
+<dt>Parameters:</dt>
+<dd>paths - file or list of files to load hooks from</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="header">
+<h1>Behat</h1>
+<ul>
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../everzet/behat/loader/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../../../everzet/behat/loader/package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../../index.html" target="_top">Frames</a>
+<a href="../../../everzet/behat/loader/hooksloader.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>

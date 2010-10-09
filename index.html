@@ -1,171 +1,189 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-  <title>Behat - BDD in PHP</title>
+        <title>Behat - BDD in PHP</title>
 
-  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'/> 
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'/> 
-  <link href='http://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'/> 
-  <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
-  <link rel="stylesheet" type="text/css" href="css/pygments.css" media="all"/>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'/> 
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'/> 
+        <link href='http://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'/> 
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/pygments.css" media="all"/>
 
-  <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var activeItem;
-      var activeH = $('#fixed');
-      var menu = $('#menu');
-      var headers = $('h2:not(#fixed)');
+        <script type="text/javascript">
+            $(document).ready(function() {
+                    var activeItem;
+                    var activeH = $('#fixed');
+                    var menu = $('#menu');
+                    var headers = $('h2:not(#fixed)');
 
-      $('#preview dd').each(function() {
-        $(this).hide();
-      });
-      activeItem = $('#preview dd:eq(0)').show();
+                    $('#preview dd').each(function() {
+                        $(this).hide();
+                        });
+                    activeItem = $('#preview dd:eq(0)').show();
 
-      $('#preview dt').click(function() {
-        var el = $(this);
+                    $('#preview dt').click(function() {
+                        var el = $(this);
 
-        if (activeItem) {
-          activeItem.slideUp(200, function() {
-              activeItem = el.next().slideDown(500);
-          });
-        } else {
-            activeItem = el.next().slideDown(500);
-        }
-      });
+                        if (activeItem) {
+                        activeItem.slideUp(200, function() {
+                            activeItem = el.next().slideDown(500);
+                            });
+                        } else {
+                        activeItem = el.next().slideDown(500);
+                        }
+                        });
 
-      $(window).scroll(function() {
-          var winScrollTop = $(this).scrollTop();
+                    $(window).scroll(function() {
+                            var winScrollTop = $(this).scrollTop();
 
-          if (winScrollTop >= 73) {
-              menu.css({position: 'fixed', top: 0, opacity: 0.9})
-          } else {
-              menu.css({position: 'absolute', top: 73, opacity: 1.0})
-          }
+                            if (winScrollTop >= 73) {
+                            menu.css({position: 'fixed', top: 0, opacity: 0.9})
+                            } else {
+                            menu.css({position: 'absolute', top: 73, opacity: 1.0})
+                            }
 
-          headers.css({opacity:1});
+                            headers.css({opacity:1});
 
-          headers.each(function() {
-              var h = $(this);
+                            headers.each(function() {
+                                var h = $(this);
 
-              if (winScrollTop > headers.eq(0).offset().top) {
-                  if (winScrollTop > (h.offset().top - 1)) {
-                      activeH.css({display:'block'});
-                      activeH.text(h.text());
-                      h.css({opacity:0});
-                  }
-              } else {
-                  activeH.css({display:'none'});
-              }
-          });
-      });
+                                if (winScrollTop > headers.eq(0).offset().top) {
+                                if (winScrollTop > (h.offset().top - 1)) {
+                                activeH.css({display:'block'});
+                                activeH.text(h.text());
+                                h.css({opacity:0});
+                                }
+                                } else {
+                                activeH.css({display:'none'});
+                                }
+                                });
+                    });
 
-    });
-  </script>
-</head>
+            });
+        </script>
+    </head>
 
-<body>
-  <a class="fork" href="http://github.com/everzet/Behat"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+    <body>
+        <a class="fork" href="http://github.com/everzet/Behat"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+        <div id="container">
 
-    <h1>
-      <a href="http://everzet.com/Behat">Behat</a>
-    </h1>
+            <h1>
+                <a href="http://everzet.com/Behat">Behat</a>
+            </h1>
 
-    <ul id="menu">
-      <li><a href="#install">install</a></li>
-      <li><a href="#basics">basics</a></li>
-      <li><a href="#feature">feature</a></li>
-      <li><a href="#step">step</a></li>
-      <li><a href="#env">env</a></li>
-      <li><a href="#cli">cli</a></li>
-    </ul>
+            <ul id="menu">
+                <li><a href="#install">install</a></li>
+                <li><a href="#basics">basics</a></li>
+                <li><a href="#feature">feature</a></li>
+                <li><a href="#step">step</a></li>
+                <li><a href="#env">env</a></li>
+                <li><a href="#cli">cli</a></li>
+            </ul>
 
-    <h2 id="fixed"></h2>
+            <h2 id="fixed"></h2>
 
-    <p class="intro">
-      <span class="bdd">Behavior driven development</span> for <span class="php">PHP</span>
-    </p>
+            <p class="intro">
+                <span class="bdd">Behavior driven development</span> for <span class="php">PHP</span>
+            </p>
 
-    <dl id="preview">
-      <dt>1. <span>Describe</span> behavior in <span>Feature</span> file</dt>
-      <dd>
-        <img src="images/step_1.png" alt="Describe behavior in Feature file"/>
-      </dd>
-      <dt>2. <span>Create</span> testing <span>object definition</span></dt>
-      <dd>
-        <img src="images/step_2.png" alt="Create testing object definition"/>
-      </dd>
-      <dt>3. <span>Write</span> a step <span>definition</span> in PHP</dt>
-      <dd>
-        <img src="images/step_3.png" alt="Write a step definition in PHP"/>
-      </dd>
-      <dt>4. Run and <span>watch it fail</span></dt>
-      <dd class="step_4">
-        <img src="images/step_4.png" alt="Run and watch it fail"/>
-      </dd>
-      <dt>5. <span>Write code</span> to make the step pass</dt>
-      <dd>
-        <img src="images/step_5.png" alt="Write code to make the step pass"/>
-      </dd>
-      <dt>6. Run again and <span>see the step pass</span></dt>
-      <dd class="step_6">
-        <img src="images/step_6.png" alt="Run again and see the step pass"/>
-      </dd>
-    </dl>
+            <dl id="preview">
+                <dt>1. <span>Describe</span> behavior in <span>Feature</span> file</dt>
+                <dd>
+                    <img src="images/step_1.png" alt="Describe behavior in Feature file"/>
+                </dd>
+                <dt>2. <span>Create</span> testing <span>object definition</span></dt>
+                <dd>
+                    <img src="images/step_2.png" alt="Create testing object definition"/>
+                </dd>
+                <dt>3. <span>Write</span> a step <span>definition</span> in PHP</dt>
+                <dd>
+                    <img src="images/step_3.png" alt="Write a step definition in PHP"/>
+                </dd>
+                <dt>4. Run and <span>watch it fail</span></dt>
+                <dd class="step_4">
+                    <img src="images/step_4.png" alt="Run and watch it fail"/>
+                </dd>
+                <dt>5. <span>Write code</span> to make the step pass</dt>
+                <dd>
+                    <img src="images/step_5.png" alt="Write code to make the step pass"/>
+                </dd>
+                <dt>6. Run again and <span>see the step pass</span></dt>
+                <dd class="step_6">
+                    <img src="images/step_6.png" alt="Run again and see the step pass"/>
+                </dd>
+            </dl>
 
-    <h2 id="synopsis">Synopsis</h2>
-    <p>
-        Behat is an <a href="http://creativecommons.org/licenses/MIT/">open source</a> <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">behavior driven development</a> framework for php 5.3.
-    </p>
-    <p>
-        Behat was inspired by Ruby's <a href="http://cukes.info/">Cucumber</a> project and especially it's syntax part (<a href="http://wiki.github.com/aslakhellesoy/cucumber/gherkin">Gherkin</a>). It tries to be like Cucumber with input (Feature files) and output (console formatters), but in core, it built from the ground on the shoulders of giants:
-    </p>
-    <ul>
-        <li><a href="http://components.symfony-project.org/dependency-injection/">Symfony Dependency Injection component</a></li>
-        <li><a href="http://components.symfony-project.org/event-dispatcher/">Symfony Event Dispatcher component</a></li>
-        <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Console/">Symfony Console component</a></li>
-        <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Finder/">Symfony Finder component</a></li>
-    </ul>
-    <p>
-        Unlike any other php testing framework that tests applications inside out. Behat is testing applications <a href="http://blog.dannorth.net/whats-in-a-story/">outside in</a>. It means, that Behat works only with your application's input/output. If you want to test your models - use unit testing framework instead, Behat created for behavior testing (but can be used for anything +) ).
-    </p>
-    <p>
-        Also, there's <a href="http://everzet.com/sfBehatPlugin/">symfony plugin</a> for Behat, so you can start testing your applications right now.
-    </p>
+            <h2 id="synopsis">Synopsis</h2>
+            <p>
+                Behat is an <a href="http://creativecommons.org/licenses/MIT/">open source</a> <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">behavior driven development</a> framework for php 5.3.
+            </p>
+            <p>
+                Behat was inspired by Ruby's <a href="http://cukes.info/">Cucumber</a> project and especially it's syntax part (<a href="http://wiki.github.com/aslakhellesoy/cucumber/gherkin">Gherkin</a>). It tries to be like Cucumber with input (Feature files) and output (console formatters), but in core, it built from the ground on the shoulders of giants:
+            </p>
+            <ul>
+                <li><a href="http://components.symfony-project.org/dependency-injection/">Symfony Dependency Injection component</a></li>
+                <li><a href="http://components.symfony-project.org/event-dispatcher/">Symfony Event Dispatcher component</a></li>
+                <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Console/">Symfony Console component</a></li>
+                <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Finder/">Symfony Finder component</a></li>
+                <li><a href="http://github.com/symfony/symfony/tree/master/src/Symfony/Component/Translation/">Symfony Translation component</a></li>
+            </ul>
+            <p>
+                Unlike any other php testing framework that tests applications inside out. Behat is testing applications <a href="http://blog.dannorth.net/whats-in-a-story/">outside in</a>. It means, that Behat works only with your application's input/output. If you want to test your models - use unit testing framework instead, Behat created for behavior testing (but can be used for anything +) ).
+            </p>
+            <p>
+                Behat links:
+                <ul>
+                    <li><a href="http://github.com/everzet/Behat">Social Source Code repository (github)</a></li>
+                    <li><a href="http://github.com/everzet/Behat/wiki">WIKI pages</a></li>
+                    <li><a href="http://everzet.com/Behat/api">API docs</a></li>
+                </ul>
+            </p>
+            <p>
+                Also, there's <a href="http://everzet.com/sfBehatPlugin/">symfony plugin</a> for Behat, so you can start testing your applications right now.
+            </p>
 
-    <h2 id="install">Install</h2>
-    <p>
-      There's many ways to install Behat to your system, but first, check first and only requirement of it: you must have <strong>php 5.3.1+</strong> installed. If you have - continue reading, if not - install it first.
-    </p>
-    <p>
-      You can download Behat in either
-      <a href="http://github.com/everzet/Behat/zipball/master">zip</a> or
-      <a href="http://github.com/everzet/Behat/tarball/master">tar</a> formats.
-    </p>
-    <p>
-      You can also clone the project with <a href="http://git-scm.com">Git</a> by running:
-    </p>
-<div class="hlcode"> 
-<div class="syntax"><pre><span class="nv">$ </span>git clone git://github.com/everzet/Behat.git
+            <h2 id="install">Install</h2>
+            <p>
+                There's many ways to install Behat to your system, but first, check first and only requirement of it: you must have <strong>php 5.3.1+</strong> installed. If you have - continue reading, if not - install it first.
+            </p>
+            <p>
+                The simpliest way it installing through PEAR:
+            </p>
+            <div class="hlcode"> 
+                <div class="syntax"><pre><span class="nv">$ </span>pear channel-discover pear.everzet.com
+<span class="nv">$ </span>pear install everzet/behat
 </pre></div> 
-</div>
-    <p>
-      After downloading and unpacking - just call <code>path/to/Behat/bin/behat</code> from console to run behat tester.
-    </p>
+            </div>
+            <p>
+                <p>
+                    Or you can download Behat in either
+                    <a href="http://github.com/everzet/Behat/zipball/master">zip</a> or
+                    <a href="http://github.com/everzet/Behat/tarball/master">tar</a> formats.
+                </p>
+                <p>
+                    You can also clone the project with <a href="http://git-scm.com">Git</a> by running:
+                </p>
+                <div class="hlcode"> 
+                    <div class="syntax"><pre><span class="nv">$ </span>git clone git://github.com/everzet/Behat.git
+</pre></div> 
+                </div>
+                <p>
+                    After downloading and unpacking - just call <code>path/to/Behat/bin/behat</code> from console to run behat tester.
+                </p>
 
-    <h2 id="basics">Basics</h2>
-    <p>
-      Behat is a tool that can execute plain-text functional descriptions as automated tests. The language that Behat (and Ruby Cucumber) understands is called Gherkin. Here is an example:
-    </p>
-<div class="hlcode"> 
-<div class="syntax"><pre><span class="nc">Feature:</span><span class="no"> Search courses</span><span class="nb"></span> 
+                <h2 id="basics">Basics</h2>
+                <p>
+                    Behat is a tool that can execute plain-text functional descriptions as automated tests. The language that Behat (and Ruby Cucumber) understands is called Gherkin. Here is an example:
+                </p>
+                <div class="hlcode"> 
+                    <div class="syntax"><pre><span class="nc">Feature:</span><span class="no"> Search courses</span><span class="nb"></span> 
 <span class="nb">  In order to ensure better utilization of courses</span> 
 <span class="nb">  Potential students should be able to search for courses</span> 
 
@@ -179,44 +197,47 @@
       | B205        |
 </pre></div> 
 
-</div>
-    <p>
-      While Behat can be thought of as a “testing” tool, the intent of the tool is to support BDD. This means that the “features” (plain text descriptions with scenarios) are typically written before anything else and verified by business analysts, domain experts, etc. non technical stakeholders. The production code is then written <a href="http://blog.dannorth.net/whats-in-a-story/">outside in</a>, to make the stories pass.
-    </p>
-    <p>
-      Basic Behat test environment directory looks like that:
-    </p>
-<div class="hlcode"> 
-<div class="syntax"><pre>|-- features
+                </div>
+                <p>
+                    While Behat can be thought of as a “testing” tool, the intent of the tool is to support BDD. This means that the “features” (plain text descriptions with scenarios) are typically written before anything else and verified by business analysts, domain experts, etc. non technical stakeholders. The production code is then written <a href="http://blog.dannorth.net/whats-in-a-story/">outside in</a>, to make the stories pass.
+                </p>
+                <p>
+                    Basic Behat test environment directory looks like that:
+                </p>
+                <div class="hlcode"> 
+                    <div class="syntax"><pre>|-- features
    <span class="sb">`</span>-- steps
    |   <span class="sb">`</span>-- math_steps.php
    <span class="sb">`</span>-- support
        |-- env.php
 </pre></div> 
 
-</div>
-    <p>
-      And it can be splitted into 3 main areas:
-      <ol>
-        <li><code>features</code> - root test directory. Feature files are placed here.</li>
-        <li><code>features/steps</code> - step definitions directory. Step definitions (php scripts) lay here.</li>
-        <li><code>features/support</code> - support directory. Support scripts (environment, path definition) created here.</li>
-      </ol>
-    </p>
-    <p>
-      Core of the tests in Behat is features. Features are placed in <code>features</code> directory and are plain text files.
-    </p>
-    <p>
-      Behat parses feature files and tries to find appropriate step definition for each step from <code>features/steps</code> folder (step definitions path).
-    </p>
-    <p>
-      Every step definition is simple php-callable with access to shared between batch steps (scenarios) environment object, that can be configured inside <code>features/support/env.php</code>.
-    </p>
+                </div>
+                <p>
+                    And it can be splitted into 3 main areas:
+                    <ol>
+                        <li><code>features</code> - root test directory. Feature files are placed here.</li>
+                        <li><code>features/steps</code> - step definitions directory. Step definitions (php scripts) lay here.</li>
+                        <li><code>features/support</code> - support directory. Support scripts (environment, path definition) created here.</li>
+                    </ol>
+                </p>
+                <p>
+                    Core of the tests in Behat is features. Features are placed in <code>features</code> directory and are plain text files.
+                </p>
+                <p>
+                    Behat parses feature files and tries to find appropriate step definition for each step from <code>features/steps</code> folder (step definitions path).
+                </p>
+                <p>
+                    Every step definition is simple php-callable with access to shared between batch steps (scenarios) environment object, that can be configured inside <code>features/support/env.php</code>.
+                </p>
+                <p>
+                    Read more on <a href="http://github.com/everzet/Behat/wiki">official wiki</a>.
+                </p>
 
-    <h2 id="feature">Feature</h2>
-    <p>Feature file explained. Here's content of basic feature <code>features/math.feature</code>:</p>
-<div class="hlcode"> 
-<div class="syntax"><pre>
+                <h2 id="feature">Feature</h2>
+                <p>Feature file explained. Here's content of basic feature <code>features/math.feature</code>:</p>
+                <div class="hlcode"> 
+                    <div class="syntax"><pre>
 <span class="nc">Feature:</span><span class="no"> Addition</span><span class="nb"></span> 
 <span class="nb">  In order to avoid silly mistakes</span> 
 <span class="nb">  As a math idiot</span> 
@@ -228,87 +249,93 @@
      <span class="k">When </span>I press add
      <span class="k">Then </span>The result should be 120 on the screen
 </pre></div> 
-    </div>
-    <p>
-      As you can see, feature is simple, readable plain text file. Every feature is written in <a href="http://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> called <strong>Gherkin</strong>, that firstly was introduced in Ruby's <a href="http://cukes.info/">Cucumber</a>.
-    </p>
-    <ol>
-      <li>
-        Every <code>*.feature</code> file conventionally consists of single feature.
-      </li>
-      <li>
-        Line starting with keyword <code class="syntax"><span class="nc">Feature:</span></code> followed by free indented text starts a feature.
-      </li>
-      <li>
-        Feature usually contains a list of scenarios. You can write whatever you want up until the first scenario, which starts with the word <code class="syntax"><span class="nc">Scenario:</span></code> (or localized equivalent) on a new line.
-      </li>
-      <li>
-        Every scenario consists of a list of steps, which must start with one of the keywords
-        <code class="syntax"><span class="k">Given</span></code>,
-        <code class="syntax"><span class="k">When</span></code>,
-        <code class="syntax"><span class="k">Then</span></code>,
-        <code class="syntax"><span class="k">But</span></code> or
-        <code class="syntax"><span class="k">And</span></code>.
-        Behat treats them all the same, but you shouldn’t.
-      </li>
-    </ol>
+                </div>
+                <p>
+                    As you can see, feature is simple, readable plain text file. Every feature is written in <a href="http://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> called <strong>Gherkin</strong>, that firstly was introduced in Ruby's <a href="http://cukes.info/">Cucumber</a>.
+                </p>
+                <ol>
+                    <li>
+                        Every <code>*.feature</code> file conventionally consists of single feature.
+                    </li>
+                    <li>
+                        Line starting with keyword <code class="syntax"><span class="nc">Feature:</span></code> followed by free indented text starts a feature.
+                    </li>
+                    <li>
+                        Feature usually contains a list of scenarios. You can write whatever you want up until the first scenario, which starts with the word <code class="syntax"><span class="nc">Scenario:</span></code> (or localized equivalent) on a new line.
+                    </li>
+                    <li>
+                        Every scenario consists of a list of steps, which must start with one of the keywords
+                        <code class="syntax"><span class="k">Given</span></code>,
+                        <code class="syntax"><span class="k">When</span></code>,
+                        <code class="syntax"><span class="k">Then</span></code>,
+                        <code class="syntax"><span class="k">But</span></code> or
+                        <code class="syntax"><span class="k">And</span></code>.
+                        Behat treats them all the same, but you shouldn’t.
+                    </li>
+                </ol>
+                <p>
+                    Read more in <a href="http://github.com/everzet/Behat/wiki/Features">wiki</a>.
+                </p>
 
 
-    <h2 id="step">Step</h2>
-    <p>For each step Behat will look for a matching step definition. A step definition is written in php. Each step definition consists of a keyword, a regular expression, and a callback. Example <code>features/steps/math.php</code>:</p>
-<div class="hlcode"> 
-<div class="syntax"><pre><span class="cp">&lt;?php</span> 
+                <h2 id="step">Step</h2>
+                <p>For each step Behat will look for a matching step definition. A step definition is written in php. Each step definition consists of a keyword, a regular expression, and a callback. Example <code>features/steps/math.php</code>:</p>
+                <div class="hlcode"> 
+                    <div class="syntax"><pre><span class="cp">&lt;?php</span> 
 
 <span class="nv">$steps</span><span class="o">-&gt;</span><span class="na">Given</span><span class="p">(</span><span class="s1">&#39;/^I have entered (\d+) into the calculator$/&#39;</span><span class="p">,</span> <span class="nc">function</span><span class="p">(</span><span class="nv">$world</span><span class="p">,</span> <span class="nv">$arg1</span><span class="p">)</span> <span class="p">{</span> 
     <span class="k">throw</span> <span class="k">new</span> <span class="nx">Everzet</span><span class="k">\</span><span class="nx">Behat</span><span class="k">\</span><span class="nx">Exception</span><span class="k">\</span><span class="nx">Pending</span><span class="p">(</span><span class="s1">&#39;Write code later&#39;</span><span class="p">);</span> 
 <span class="p">});</span>
 </pre></div></div>
 
-    <p>
-    </p>
-    <ol>
-      <li>
-        <code class="syntax"><span class="nv">$steps</span></code> is global StepsLoader object, available in all step definition files. Calling <br/><code class="syntax"><span class="o">-&gt;Given</span></code> on it will define new <code class="syntax"><span class="k">Given</span></code> (but this will match When/Then/And keyworded steps to) step.
-      </li>
-      <li>
-        <code class="syntax"><span class="s1">&#39;/^I have entered (\d+) into the calculator$/&#39;</span></code> - regex matcher for step. All search patterns (<code class="syntax"><span class="s1">(\d+)</span></code>) will become callback arguments (<code class="syntax"><span class="nv">$arg1</span></code>).
-      </li>
-      <li>
-        First callback argument (<code class="syntax"><span class="nv">$world</span></code>) is always reserved for environment object. Environment object created before every scenario run and shared between scenario steps.
-      </li>
-      <li>
-        Step definition body is simple php code. <strong style="color:red">Failed</strong> step is a step, which definition execution throws an exception. So, if step execution doesn't throw exceptions - step <strong style="color:green">passes</strong>.
-      </li>
-    </ol>
+                <p>
+                </p>
+                <ol>
+                    <li>
+                        <code class="syntax"><span class="nv">$steps</span></code> is global StepsLoader object, available in all step definition files. Calling <br/><code class="syntax"><span class="o">-&gt;Given</span></code> on it will define new <code class="syntax"><span class="k">Given</span></code> (but this will match When/Then/And keyworded steps to) step.
+                    </li>
+                    <li>
+                        <code class="syntax"><span class="s1">&#39;/^I have entered (\d+) into the calculator$/&#39;</span></code> - regex matcher for step. All search patterns (<code class="syntax"><span class="s1">(\d+)</span></code>) will become callback arguments (<code class="syntax"><span class="nv">$arg1</span></code>).
+                    </li>
+                    <li>
+                        First callback argument (<code class="syntax"><span class="nv">$world</span></code>) is always reserved for environment object. Environment object created before every scenario run and shared between scenario steps.
+                    </li>
+                    <li>
+                        Step definition body is simple php code. <strong style="color:red">Failed</strong> step is a step, which definition execution throws an exception. So, if step execution doesn't throw exceptions - step <strong style="color:green">passes</strong>.
+                    </li>
+                </ol>
+                <p>
+                    Read more in <a href="http://github.com/everzet/Behat/wiki/Given%2C-When%2C-Then">wiki</a>.
+                </p>
 
-    <h2 id="env">Environment</h2>
-    <p>
-      Behat creates environment object for each scenario and passes reference to it into each step definition.
-    </p>
-    <p>
-      So, if you want to calculate/accumulate or just share variables between steps definitions - use <code class="syntax"><span class="nv">$world</span></code> container for that.
-    </p>
-    <p>
-      But what if you need some definitions or libraries being connected in each world? Use <code>features/support/env.php</code> configurator for that:
-    </p>
-<div class="hlcode"> 
-<div class="syntax"><pre><span class="cp">&lt;?php</span> 
+                <h2 id="env">Environment</h2>
+                <p>
+                    Behat creates environment object for each scenario and passes reference to it into each step definition.
+                </p>
+                <p>
+                    So, if you want to calculate/accumulate or just share variables between steps definitions - use <code class="syntax"><span class="nv">$world</span></code> container for that.
+                </p>
+                <p>
+                    But what if you need some definitions or libraries being connected in each world? Use <code>features/support/env.php</code> configurator for that:
+                </p>
+                <div class="hlcode"> 
+                    <div class="syntax"><pre><span class="cp">&lt;?php</span> 
 
 <span class="k">require_once</span> <span class="s1">&#39;PHPUnit/Autoload.php&#39;</span><span class="p">;</span> 
 <span class="k">require_once</span> <span class="s1">&#39;PHPUnit/Framework/Assert/Functions.php&#39;</span><span class="p">;</span> 
 
 <span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/Calculator.php&#39;</span><span class="p">;</span> 
 </pre></div> 
-</div>
-    <p>
-      This file will be executed on each environment object creation.
-    </p>
-    <p>
-      Also, there's instance variable <code class="syntax"><span class="nv">$world</span></code> available inside <code>features/support/env.php</code>, so you can init classes, add functions and variables to world here:
-    </p>
+                </div>
+                <p>
+                    This file will be executed on each environment object creation.
+                </p>
+                <p>
+                    Also, there's instance variable <code class="syntax"><span class="nv">$world</span></code> available inside <code>features/support/env.php</code>, so you can init classes, add functions and variables to world here:
+                </p>
 
-<div class="hlcode"> 
-<div class="syntax"><pre><span class="cp">&lt;?php</span> 
+                <div class="hlcode"> 
+                    <div class="syntax"><pre><span class="cp">&lt;?php</span> 
 
 <span class="k">require_once</span> <span class="s1">&#39;PHPUnit/Autoload.php&#39;</span><span class="p">;</span> 
 <span class="k">require_once</span> <span class="s1">&#39;PHPUnit/Framework/Assert/Functions.php&#39;</span><span class="p">;</span> 
@@ -325,28 +352,31 @@
 <span class="p">};</span> 
 </pre></div> 
 
-</div>
+                </div>
+                <p>
+                    Read more in <a href="http://github.com/everzet/Behat/wiki/Scenarios-Environment">wiki</a>.
+                </p>
 
-    <h2 id="cli">CLI</h2>
-    <p>Behat comes bundled with powerfull console runner, called... behat +)</p>
-    <p>There's bunch of options available there:</p>
-    <ul>
-      <li>
-        First of all, first argument to the <code>behat</code> application is path to the features (root) path. It can be ommited if we are in features path or features path inside current working directory.
-      </li>
-      <li>
-        <code>--format</code> option or it's shortcut <code>-f</code> used to set output formatter. Default formatter is <strong>pretty</strong>, but you can use phpUnit-like <strong>progress</strong> formatter: <code>behat -f progress</code>.
-      </li>
-      <li>
-        <code>--tags</code> option or it's shortcut <code>-t</code> used to specify tags filter for features and scenarios: <code>behat -t @wip</code>.
-      </li>
-    </ul>
+                <h2 id="cli">CLI</h2>
+                <p>Behat comes bundled with powerfull console runner, called... behat +)</p>
+                <p>There's bunch of options available there:</p>
+                <ul>
+                    <li>
+                        First of all, first argument to the <code>behat</code> application is path to the features (root) path. It can be ommited if we are in features path or features path inside current working directory.
+                    </li>
+                    <li>
+                        <code>--format</code> option or it's shortcut <code>-f</code> used to set output formatter. Default formatter is <strong>pretty</strong>, but you can use phpUnit-like <strong>progress</strong> formatter: <code>behat -f progress</code>.
+                    </li>
+                    <li>
+                        <code>--tags</code> option or it's shortcut <code>-t</code> used to specify tags filter for features and scenarios: <code>behat -t @wip</code>.
+                    </li>
+                </ul>
 
 
-    <span class="copyright">Developed by Konstantin Kudryashov (<a href="http://everzet.com/">everzet</a>), 2010</span>
+                <span class="copyright">Developed by Konstantin Kudryashov (<a href="http://everzet.com/">everzet</a>), 2010</span>
 
-  </div>
+            </div>
 
-  
-</body>
-</html>
+
+        </body>
+    </html>

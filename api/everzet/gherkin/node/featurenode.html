@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
+<meta name="when" content="Sat, 09 Oct 2010 03:45:18 +0300">
+
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="start" href="../../../overview-summary.html">
+
+<title>FeatureNode (Behat)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>Behat</h1>
+<ul>
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../everzet/gherkin/node/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../../../everzet/gherkin/node/package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../../index.html" target="_top">Frames</a>
+<a href="../../../everzet/gherkin/node/featurenode.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">Everzet\Gherkin\Node\FeatureNode</div>
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 18</div>
+
+<h1>Class FeatureNode</h1>
+
+<pre class="tree">Class:FeatureNode - Superclass: SectionNode
+<a href="../../../everzet/gherkin/node/sectionnode.html">SectionNode</a><br>   &lfloor;&nbsp;<strong>FeatureNode</strong><br /></pre>
+
+<hr>
+
+<p class="signature">public  class <strong>FeatureNode</strong><br>extends <a href="../../../everzet/gherkin/node/sectionnode.html">SectionNode</a>
+
+</p>
+
+<div class="comment" id="overview_description"><p>Feature.</p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>Konstantin Kudryashov <ever.zet@gmail.com></dd>
+</dl>
+<hr>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#accept()">accept</a>(mixed visitor)</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#addDescription()">addDescription</a>(string description)</p><p class="description">Adds description line to Feature</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#addDescriptions()">addDescriptions</a>(array description)</p><p class="description">Adds description lines to Feature</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#addScenario()">addScenario</a>(Scenario scenario)</p><p class="description">Adds Scenario to Feature</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getBackground()">getBackground</a>()</p><p class="description">Returns Feature backgrounds</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getDescription()">getDescription</a>()</p><p class="description">Returns description lines array</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#getDescriptionsAsString()">getDescriptionsAsString</a>()</p><p class="description">Returns description lines as string</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getScenarios()">getScenarios</a>()</p><p class="description">Returns Feature scenarios</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#hasBackground()">hasBackground</a>()</p><p class="description">Does Feature has background?</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#hasDescription()">hasDescription</a>()</p><p class="description">Is Feature has description?</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#hasScenarios()">hasScenarios</a>()</p><p class="description">Does Feature has scenarios?</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setBackground()">setBackground</a>(Background background)</p><p class="description">Adds Background to Feature</p></td>
+</tr>
+</table>
+
+<table class="inherit">
+<tr><th colspan="2">Methods inherited from Everzet\Gherkin\Node\SectionNode</th></tr>
+<tr><td><a href="../../../everzet/gherkin/node/sectionnode.html#addTag()">addTag</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#addTags()">addTags</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#getFile()">getFile</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#getLocale()">getLocale</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#getTags()">getTags</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#getTitle()">getTitle</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#hasTag()">hasTag</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#hasTags()">hasTags</a>, <a href="../../../everzet/gherkin/node/sectionnode.html#setTitle()">setTitle</a></td></tr></table>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 24</div>
+<h3 id="accept()">accept</h3>
+<code class="signature">public  void <strong>accept</strong>(mixed visitor)</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 44</div>
+<h3 id="addDescription()">addDescription</h3>
+<code class="signature">public  void <strong>addDescription</strong>(string description)</code>
+<div class="details">
+<p>Adds description line to Feature</p><dl>
+<dt>Parameters:</dt>
+<dd>description - description line</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 34</div>
+<h3 id="addDescriptions()">addDescriptions</h3>
+<code class="signature">public  void <strong>addDescriptions</strong>(array description)</code>
+<div class="details">
+<p>Adds description lines to Feature</p><dl>
+<dt>Parameters:</dt>
+<dd>description - array of description lines</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 115</div>
+<h3 id="addScenario()">addScenario</h3>
+<code class="signature">public  void <strong>addScenario</strong>(Scenario scenario)</code>
+<div class="details">
+<p>Adds Scenario to Feature</p><dl>
+<dt>Parameters:</dt>
+<dd>scenario - Scenario instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 105</div>
+<h3 id="getBackground()">getBackground</h3>
+<code class="signature">public  array <strong>getBackground</strong>()</code>
+<div class="details">
+<p>Returns Feature backgrounds</p><dl>
+<dt>Returns:</dt>
+<dd>array of Background instances</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 64</div>
+<h3 id="getDescription()">getDescription</h3>
+<code class="signature">public  array <strong>getDescription</strong>()</code>
+<div class="details">
+<p>Returns description lines array</p></div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 74</div>
+<h3 id="getDescriptionsAsString()">getDescriptionsAsString</h3>
+<code class="signature">public  string <strong>getDescriptionsAsString</strong>()</code>
+<div class="details">
+<p>Returns description lines as string</p></div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 136</div>
+<h3 id="getScenarios()">getScenarios</h3>
+<code class="signature">public  array <strong>getScenarios</strong>()</code>
+<div class="details">
+<p>Returns Feature scenarios</p><dl>
+<dt>Returns:</dt>
+<dd>array of Scenario instances</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 95</div>
+<h3 id="hasBackground()">hasBackground</h3>
+<code class="signature">public  boolean <strong>hasBackground</strong>()</code>
+<div class="details">
+<p>Does Feature has background?</p><dl>
+<dt>Returns:</dt>
+<dd>true if has</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 54</div>
+<h3 id="hasDescription()">hasDescription</h3>
+<code class="signature">public  boolean <strong>hasDescription</strong>()</code>
+<div class="details">
+<p>Is Feature has description?</p><dl>
+<dt>Returns:</dt>
+<dd>true if has</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 126</div>
+<h3 id="hasScenarios()">hasScenarios</h3>
+<code class="signature">public  boolean <strong>hasScenarios</strong>()</code>
+<div class="details">
+<p>Does Feature has scenarios?</p><dl>
+<dt>Returns:</dt>
+<dd>true if has</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/FeatureNode.php at line 84</div>
+<h3 id="setBackground()">setBackground</h3>
+<code class="signature">public  void <strong>setBackground</strong>(Background background)</code>
+<div class="details">
+<p>Adds Background to Feature</p><dl>
+<dt>Parameters:</dt>
+<dd>background - background instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="header">
+<h1>Behat</h1>
+<ul>
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../everzet/gherkin/node/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../../../everzet/gherkin/node/package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../../index.html" target="_top">Frames</a>
+<a href="../../../everzet/gherkin/node/featurenode.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>
