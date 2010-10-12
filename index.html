@@ -342,12 +342,12 @@
 <span class="k">require</span> <span class="s1">&#39;paths.php&#39;</span><span class="p">;</span> 
 
 <span class="c1">// Create WebClient behavior</span> 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">client</span> <span class="o">=</span> <span class="k">new</span> <span class="k">\</span><span class="nx">Goutte</span><span class="k">\</span><span class="nx">Client</span><span class="p">;</span> 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span> 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span> 
+<span class="nv">$world</span><span class="o">-&gt;</span><span class="na">client</span> <span class="o">=</span> <span class="k">new</span> <span class="k">\</span><span class="nx">Goutte</span><span class="k">\</span><span class="nx">Client</span><span class="p">;</span> 
+<span class="nv">$world</span><span class="o">-&gt;</span><span class="na">response</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span> 
+<span class="nv">$world</span><span class="o">-&gt;</span><span class="na">form</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span> 
 
 <span class="c1">// Helpful closures</span> 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">visit</span> <span class="o">=</span> <span class="nx">function</span><span class="p">(</span><span class="nv">$link</span><span class="p">)</span> <span class="nx">use</span><span class="p">(</span><span class="nv">$world</span><span class="p">)</span> <span class="p">{</span> 
+<span class="nv">$world</span><span class="o">-&gt;</span><span class="na">visit</span> <span class="o">=</span> <span class="nx">function</span><span class="p">(</span><span class="nv">$link</span><span class="p">)</span> <span class="nx">use</span><span class="p">(</span><span class="nv">$world</span><span class="p">)</span> <span class="p">{</span> 
     <span class="nv">$world</span><span class="o">-&gt;</span><span class="na">response</span> <span class="o">=</span> <span class="nv">$world</span><span class="o">-&gt;</span><span class="na">client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nv">$link</span><span class="p">);</span> 
 <span class="p">};</span> 
 </pre></div> 
