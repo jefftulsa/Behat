@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Sat, 09 Oct 2010 03:45:18 +0300">
+<meta name="when" content="Tue, 19 Oct 2010 23:00:40 +0300">
 
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
 <link rel="start" href="../../../../overview-summary.html">
@@ -37,7 +37,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <hr>
 
 <div class="qualifiedName">Everzet\Behat\Console\Command\TestCommand</div>
-<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 29</div>
+<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 34</div>
 
 <h1>Class TestCommand</h1>
 
@@ -65,13 +65,25 @@ Command<br>&lfloor;&nbsp;<strong>TestCommand</strong><br /></pre>
 <td class="description"><p class="name"><a href="#configure()">configure</a>()</p><p class="description"></p></td>
 </tr>
 <tr>
+<td class="type">protected  ContainerBuilder</td>
+<td class="description"><p class="name"><a href="#createContainer()">createContainer</a>(string configurationFile)</p><p class="description">Create Dependency Injection Container and import external configuration file into it.</p></td>
+</tr>
+<tr>
 <td class="type">protected  void</td>
 <td class="description"><p class="name"><a href="#execute()">execute</a>(mixed input, mixed output)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type">protected  mixed</td>
+<td class="description"><p class="name"><a href="#findDefinitionResources()">findDefinitionResources</a>(string stepsPath)</p><p class="description">Find definitions files in specified path.</p></td>
+</tr>
+<tr>
+<td class="type">protected  mixed</td>
+<td class="description"><p class="name"><a href="#findFeatureResources()">findFeatureResources</a>(string featuresPath)</p><p class="description">Find features files in specified path.</p></td>
 </tr>
 </table>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 34</div>
+<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 39</div>
 <h3 id="configure()">configure</h3>
 <code class="signature">protected  void <strong>configure</strong>()</code>
 <div class="details">
@@ -83,13 +95,55 @@ Command<br>&lfloor;&nbsp;<strong>TestCommand</strong><br /></pre>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 70</div>
+<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 188</div>
+<h3 id="createContainer()">createContainer</h3>
+<code class="signature">protected  ContainerBuilder <strong>createContainer</strong>(string configurationFile)</code>
+<div class="details">
+<p>Create Dependency Injection Container and import external configuration file into it.</p><dl>
+<dt>Parameters:</dt>
+<dd>configurationFile - configuration file (may be YAML or XML)</dd>
+<dt>Returns:</dt>
+<dd>container instance</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 75</div>
 <h3 id="execute()">execute</h3>
 <code class="signature">protected  void <strong>execute</strong>(mixed input, mixed output)</code>
 <div class="details">
 <p></p><dl>
 <dt>See Also:</dt>
 <dd>Symfony\Component\Console\Command\Command</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 258</div>
+<h3 id="findDefinitionResources()">findDefinitionResources</h3>
+<code class="signature">protected  mixed <strong>findDefinitionResources</strong>(string stepsPath)</code>
+<div class="details">
+<p>Find definitions files in specified path.</p><dl>
+<dt>Parameters:</dt>
+<dd>stepsPath - steps files path</dd>
+<dt>Returns:</dt>
+<dd>files iterator</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Console/Command/TestCommand.php at line 237</div>
+<h3 id="findFeatureResources()">findFeatureResources</h3>
+<code class="signature">protected  mixed <strong>findFeatureResources</strong>(string featuresPath)</code>
+<div class="details">
+<p>Find features files in specified path.</p><dl>
+<dt>Parameters:</dt>
+<dd>featuresPath - feature file or path</dd>
+<dt>Returns:</dt>
+<dd>files iterator</dd>
 </dl>
 </div>
 
