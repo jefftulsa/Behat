@@ -4,10 +4,10 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Tue, 19 Oct 2010 23:00:40 +0300">
+<meta name="when" content="Thu, 21 Oct 2010 16:13:24 +0300">
 
-<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
-<link rel="start" href="../../../overview-summary.html">
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="start" href="../../../../overview-summary.html">
 
 <title>PrettyFormatter (Behat)</title>
 
@@ -17,18 +17,18 @@
 <div class="header">
 <h1>Behat</h1>
 <ul>
-<li><a href="../../../overview-summary.html">Overview</a></li>
-<li><a href="../../../everzet/behat/formatter/package-summary.html">Namespace</a></li>
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../everzet/behat/output/formatter/package-summary.html">Namespace</a></li>
 <li class="active">Class</li>
-<li><a href="../../../everzet/behat/formatter/package-tree.html">Tree</a></li>
-<li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../../everzet/behat/output/formatter/package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 </ul>
 </div>
 
 <div class="small_links">
-<a href="../../../index.html" target="_top">Frames</a>
-<a href="../../../everzet/behat/formatter/prettyformatter.html" target="_top">No frames</a>
+<a href="../../../../index.html" target="_top">Frames</a>
+<a href="../../../../everzet/behat/output/formatter/prettyformatter.html" target="_top">No frames</a>
 </div>
 <div class="small_links">
 Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
@@ -36,22 +36,22 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </div>
 <hr>
 
-<div class="qualifiedName">Everzet\Behat\Formatter\PrettyFormatter</div>
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 35</div>
+<div class="qualifiedName">Everzet\Behat\Output\Formatter\PrettyFormatter</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 35</div>
 
 <h1>Class PrettyFormatter</h1>
 
 <pre class="tree">Class:PrettyFormatter - Superclass: ConsoleFormatter
-<a href="../../../everzet/behat/formatter/consoleformatter.html">ConsoleFormatter</a><br>   &lfloor;&nbsp;<strong>PrettyFormatter</strong><br /></pre>
+<a href="../../../../everzet/behat/output/formatter/consoleformatter.html">ConsoleFormatter</a><br>   &lfloor;&nbsp;<strong>PrettyFormatter</strong><br /></pre>
 
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>FormatterInterface </dt>
+<dd>FormatterInterface ContainerAwareFormatterInterface </dt>
 </dl>
 
 <hr>
 
-<p class="signature">public  class <strong>PrettyFormatter</strong><br>extends <a href="../../../everzet/behat/formatter/consoleformatter.html">ConsoleFormatter</a>
+<p class="signature">public  class <strong>PrettyFormatter</strong><br>extends <a href="../../../../everzet/behat/output/formatter/consoleformatter.html">ConsoleFormatter</a>
 
 </p>
 
@@ -63,34 +63,23 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </dl>
 <hr>
 
-<table id="summary_constr">
-<tr><th colspan="2">Constructor Summary</th></tr>
-<tr>
-<td class="description"><p class="name"><a href="#PrettyFormatter()">PrettyFormatter</a>(mixed container)</p><p class="description"></p></td>
-</tr>
-</table>
-
 <table id="summary_method">
 <tr><th colspan="2">Method Summary</th></tr>
 <tr>
-<td class="type">protected  string</td>
-<td class="description"><p class="name"><a href="#getPyString()">getPyString</a>(<a href="../../../everzet/gherkin/node/pystringnode.html">PyStringNode</a> pystring, integer indent)</p><p class="description">Return formatted PyString, prepared for console output.</p></td>
+<td class="type">protected  <a href="../../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a></td>
+<td class="description"><p class="name"><a href="#getDispatcher()">getDispatcher</a>()</p><p class="description"></p></td>
 </tr>
 <tr>
 <td class="type">protected  string</td>
-<td class="description"><p class="name"><a href="#getTableString()">getTableString</a>(<a href="../../../everzet/gherkin/node/tablenode.html">TableNode</a> table, string indent)</p><p class="description">Return formatted Table, prepared for console output.</p></td>
+<td class="description"><p class="name"><a href="#getPyString()">getPyString</a>(<a href="../../../../everzet/gherkin/node/pystringnode.html">PyStringNode</a> pystring, integer indent)</p><p class="description">Return formatted PyString, prepared for console output.</p></td>
 </tr>
 <tr>
 <td class="type">protected  string</td>
-<td class="description"><p class="name"><a href="#getTagsString()">getTagsString</a>(<a href="../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> section)</p><p class="description">Return formatted tag string, prepared for console output.</p></td>
+<td class="description"><p class="name"><a href="#getTableString()">getTableString</a>(<a href="../../../../everzet/gherkin/node/tablenode.html">TableNode</a> table, string indent)</p><p class="description">Return formatted Table, prepared for console output.</p></td>
 </tr>
 <tr>
-<td class="type">protected  Symfony\Component\Translation\TranslatorInterface</td>
-<td class="description"><p class="name"><a href="#getTranslator()">getTranslator</a>()</p><p class="description"></p></td>
-</tr>
-<tr>
-<td class="type">protected  boolean</td>
-<td class="description"><p class="name"><a href="#isColorsAllowed()">isColorsAllowed</a>()</p><p class="description"></p></td>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getTagsString()">getTagsString</a>(<a href="../../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> section)</p><p class="description">Return formatted tag string, prepared for console output.</p></td>
 </tr>
 <tr>
 <td class="type"> void</td>
@@ -130,35 +119,38 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </tr>
 <tr>
 <td class="type">protected  integer</td>
-<td class="description"><p class="name"><a href="#recalcMaxDescriptionLength()">recalcMaxDescriptionLength</a>(<a href="../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> scenario)</p><p class="description">Recalculate max descriptions size for section elements.</p></td>
+<td class="description"><p class="name"><a href="#recalcMaxDescriptionLength()">recalcMaxDescriptionLength</a>(<a href="../../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> scenario)</p><p class="description">Recalculate max descriptions size for section elements.</p></td>
 </tr>
 <tr>
 <td class="type"> void</td>
 <td class="description"><p class="name"><a href="#registerListeners()">registerListeners</a>(mixed dispatcher)</p><p class="description"></p></td>
 </tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setContainer()">setContainer</a>(mixed container)</p><p class="description"></p></td>
+</tr>
 </table>
 
 <table class="inherit">
-<tr><th colspan="2">Methods inherited from Everzet\Behat\Formatter\ConsoleFormatter</th></tr>
-<tr><td><a href="../../../everzet/behat/formatter/consoleformatter.html#colorize()">colorize</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#colorizeFinish()">colorizeFinish</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#colorizeStart()">colorizeStart</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#getStatusColorCode()">getStatusColorCode</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#getTranslator()">getTranslator</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#hasColorSupport()">hasColorSupport</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#isColorsAllowed()">isColorsAllowed</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#printLineSourceComment()">printLineSourceComment</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#printSnippets()">printSnippets</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#printStatistics()">printStatistics</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#trimFilename()">trimFilename</a>, <a href="../../../everzet/behat/formatter/consoleformatter.html#write()">write</a></td></tr></table>
+<tr><th colspan="2">Methods inherited from Everzet\Behat\Output\Formatter\ConsoleFormatter</th></tr>
+<tr><td><a href="../../../../everzet/behat/output/formatter/consoleformatter.html#allowColors()">allowColors</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#beVerbose()">beVerbose</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#colorize()">colorize</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#colorizeFinish()">colorizeFinish</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#colorizeStart()">colorizeStart</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#getDispatcher()">getDispatcher</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#getStatusColorCode()">getStatusColorCode</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#getTranslator()">getTranslator</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#isColorsAllowed()">isColorsAllowed</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#printLineSourceComment()">printLineSourceComment</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#printSnippets()">printSnippets</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#printStatistics()">printStatistics</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#setTranslator()">setTranslator</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#trimFilename()">trimFilename</a>, <a href="../../../../everzet/behat/output/formatter/consoleformatter.html#write()">write</a></td></tr></table>
 
-<h2 id="detail_constr">Constructor Detail</h2>
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 49</div>
-<h3 id="PrettyFormatter()">PrettyFormatter</h3>
-<code class="signature">public <strong>PrettyFormatter</strong>(mixed container)</code>
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 81</div>
+<h3 id="getDispatcher()">getDispatcher</h3>
+<code class="signature">protected  <a href="../../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> <strong>getDispatcher</strong>()</code>
 <div class="details">
 <p></p><dl>
 <dt>See Also:</dt>
-<dd>Everzet\Behat\Formatter\FormatterInterface</dd>
+<dd><a href="../../../../everzet/behat/output/formatter/consoleformatter.html">ConsoleFormatter</a></dd>
 </dl>
 </div>
 
 <hr>
 
-<h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 474</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 458</div>
 <h3 id="getPyString()">getPyString</h3>
-<code class="signature">protected  string <strong>getPyString</strong>(<a href="../../../everzet/gherkin/node/pystringnode.html">PyStringNode</a> pystring, integer indent)</code>
+<code class="signature">protected  string <strong>getPyString</strong>(<a href="../../../../everzet/gherkin/node/pystringnode.html">PyStringNode</a> pystring, integer indent)</code>
 <div class="details">
 <p>Return formatted PyString, prepared for console output.</p><dl>
 <dt>Parameters:</dt>
@@ -169,9 +161,9 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 490</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 474</div>
 <h3 id="getTableString()">getTableString</h3>
-<code class="signature">protected  string <strong>getTableString</strong>(<a href="../../../everzet/gherkin/node/tablenode.html">TableNode</a> table, string indent)</code>
+<code class="signature">protected  string <strong>getTableString</strong>(<a href="../../../../everzet/gherkin/node/tablenode.html">TableNode</a> table, string indent)</code>
 <div class="details">
 <p>Return formatted Table, prepared for console output.</p><dl>
 <dt>Parameters:</dt>
@@ -182,9 +174,9 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 456</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 440</div>
 <h3 id="getTagsString()">getTagsString</h3>
-<code class="signature">protected  string <strong>getTagsString</strong>(<a href="../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> section)</code>
+<code class="signature">protected  string <strong>getTagsString</strong>(<a href="../../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> section)</code>
 <div class="details">
 <p>Return formatted tag string, prepared for console output.</p><dl>
 <dt>Parameters:</dt>
@@ -194,31 +186,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 69</div>
-<h3 id="getTranslator()">getTranslator</h3>
-<code class="signature">protected  Symfony\Component\Translation\TranslatorInterface <strong>getTranslator</strong>()</code>
-<div class="details">
-<p></p><dl>
-<dt>See Also:</dt>
-<dd>Everzet\Behat\Formatter\ConsoleFormatter</dd>
-</dl>
-</div>
-
-<hr>
-
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 61</div>
-<h3 id="isColorsAllowed()">isColorsAllowed</h3>
-<code class="signature">protected  boolean <strong>isColorsAllowed</strong>()</code>
-<div class="details">
-<p></p><dl>
-<dt>See Also:</dt>
-<dd>Everzet\Behat\Formatter\ConsoleFormatter</dd>
-</dl>
-</div>
-
-<hr>
-
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 322</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 306</div>
 <h3 id="printBackgroundFooter()">printBackgroundFooter</h3>
 <code class="signature">public  void <strong>printBackgroundFooter</strong>(Event event)</code>
 <div class="details">
@@ -230,7 +198,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 293</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 277</div>
 <h3 id="printBackgroundHeader()">printBackgroundHeader</h3>
 <code class="signature">public  void <strong>printBackgroundHeader</strong>(Event event)</code>
 <div class="details">
@@ -242,7 +210,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 107</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 91</div>
 <h3 id="printFeatureHeader()">printFeatureHeader</h3>
 <code class="signature">public  void <strong>printFeatureHeader</strong>(Event event)</code>
 <div class="details">
@@ -254,7 +222,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 241</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 225</div>
 <h3 id="printOutlineFooter()">printOutlineFooter</h3>
 <code class="signature">public  void <strong>printOutlineFooter</strong>(Event event)</code>
 <div class="details">
@@ -266,7 +234,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 144</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 128</div>
 <h3 id="printOutlineHeader()">printOutlineHeader</h3>
 <code class="signature">public  void <strong>printOutlineHeader</strong>(Event event)</code>
 <div class="details">
@@ -278,7 +246,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 205</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 189</div>
 <h3 id="printOutlineSubResult()">printOutlineSubResult</h3>
 <code class="signature">public  void <strong>printOutlineSubResult</strong>(Event event)</code>
 <div class="details">
@@ -290,7 +258,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 283</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 267</div>
 <h3 id="printScenarioFooter()">printScenarioFooter</h3>
 <code class="signature">public  void <strong>printScenarioFooter</strong>(Event event)</code>
 <div class="details">
@@ -302,7 +270,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 251</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 235</div>
 <h3 id="printScenarioHeader()">printScenarioHeader</h3>
 <code class="signature">public  void <strong>printScenarioHeader</strong>(Event event)</code>
 <div class="details">
@@ -314,7 +282,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 334</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 318</div>
 <h3 id="printStep()">printStep</h3>
 <code class="signature">public  void <strong>printStep</strong>(Event event)</code>
 <div class="details">
@@ -326,9 +294,9 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 421</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 405</div>
 <h3 id="recalcMaxDescriptionLength()">recalcMaxDescriptionLength</h3>
-<code class="signature">protected  integer <strong>recalcMaxDescriptionLength</strong>(<a href="../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> scenario)</code>
+<code class="signature">protected  integer <strong>recalcMaxDescriptionLength</strong>(<a href="../../../../everzet/gherkin/node/sectionnode.html">SectionNode</a> scenario)</code>
 <div class="details">
 <p>Recalculate max descriptions size for section elements.</p><dl>
 <dt>Parameters:</dt>
@@ -340,13 +308,25 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Formatter/PrettyFormatter.php at line 82</div>
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 48</div>
 <h3 id="registerListeners()">registerListeners</h3>
 <code class="signature">public  void <strong>registerListeners</strong>(mixed dispatcher)</code>
 <div class="details">
 <p></p><dl>
 <dt>See Also:</dt>
-<dd>Everzet\Behat\Formatter\FormatterInterface</dd>
+<dd><a href="../../../../everzet/behat/output/formatter/formatterinterface.html">FormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/PrettyFormatter.php at line 73</div>
+<h3 id="setContainer()">setContainer</h3>
+<code class="signature">public  void <strong>setContainer</strong>(mixed container)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/containerawareformatterinterface.html">ContainerAwareFormatterInterface</a></dd>
 </dl>
 </div>
 
@@ -355,18 +335,18 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <div class="header">
 <h1>Behat</h1>
 <ul>
-<li><a href="../../../overview-summary.html">Overview</a></li>
-<li><a href="../../../everzet/behat/formatter/package-summary.html">Namespace</a></li>
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../everzet/behat/output/formatter/package-summary.html">Namespace</a></li>
 <li class="active">Class</li>
-<li><a href="../../../everzet/behat/formatter/package-tree.html">Tree</a></li>
-<li><a href="../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../../everzet/behat/output/formatter/package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
 </ul>
 </div>
 
 <div class="small_links">
-<a href="../../../index.html" target="_top">Frames</a>
-<a href="../../../everzet/behat/formatter/prettyformatter.html" target="_top">No frames</a>
+<a href="../../../../index.html" target="_top">Frames</a>
+<a href="../../../../everzet/behat/output/formatter/prettyformatter.html" target="_top">No frames</a>
 </div>
 <div class="small_links">
 Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
