@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Fri, 22 Oct 2010 18:30:17 +0300">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
 <link rel="start" href="../../../../overview-summary.html">
@@ -72,10 +72,6 @@ Implements basic console printing operations.</p></div>
 <tr><th colspan="2">Method Summary</th></tr>
 <tr>
 <td class="type"> void</td>
-<td class="description"><p class="name"><a href="#allowColors()">allowColors</a>(mixed colors)</p><p class="description"></p></td>
-</tr>
-<tr>
-<td class="type"> void</td>
 <td class="description"><p class="name"><a href="#beVerbose()">beVerbose</a>(mixed verbose)</p><p class="description"></p></td>
 </tr>
 <tr>
@@ -120,7 +116,19 @@ Implements basic console printing operations.</p></div>
 </tr>
 <tr>
 <td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setSupportPath()">setSupportPath</a>(mixed path)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
 <td class="description"><p class="name"><a href="#setTranslator()">setTranslator</a>(mixed translator)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#showColors()">showColors</a>(mixed colors)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#showTimer()">showTimer</a>(mixed timer)</p><p class="description"></p></td>
 </tr>
 <tr>
 <td class="type">static  string</td>
@@ -133,7 +141,7 @@ Implements basic console printing operations.</p></div>
 </table>
 
 <h2 id="detail_constr">Constructor Detail</h2>
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 34</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 36</div>
 <h3 id="ConsoleFormatter()">ConsoleFormatter</h3>
 <code class="signature">public <strong>ConsoleFormatter</strong>()</code>
 <div class="details">
@@ -142,19 +150,7 @@ Implements basic console printing operations.</p></div>
 <hr>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 61</div>
-<h3 id="allowColors()">allowColors</h3>
-<code class="signature">public  void <strong>allowColors</strong>(mixed colors)</code>
-<div class="details">
-<p></p><dl>
-<dt>See Also:</dt>
-<dd><a href="../../../../everzet/behat/output/formatter/colorableformatterinterface.html">ColorableFormatterInterface</a></dd>
-</dl>
-</div>
-
-<hr>
-
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 69</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 87</div>
 <h3 id="beVerbose()">beVerbose</h3>
 <code class="signature">public  void <strong>beVerbose</strong>(mixed verbose)</code>
 <div class="details">
@@ -166,7 +162,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 200</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 222</div>
 <h3 id="colorize()">colorize</h3>
 <code class="signature">protected  string <strong>colorize</strong>(string string, integer|string result)</code>
 <div class="details">
@@ -181,7 +177,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 230</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 252</div>
 <h3 id="colorizeFinish()">colorizeFinish</h3>
 <code class="signature">protected  string <strong>colorizeFinish</strong>()</code>
 <div class="details">
@@ -193,7 +189,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 216</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 238</div>
 <h3 id="colorizeStart()">colorizeStart</h3>
 <code class="signature">protected  string <strong>colorizeStart</strong>(integer|string result)</code>
 <div class="details">
@@ -207,7 +203,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 170</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 192</div>
 <h3 id="getDispatcher()">getDispatcher</h3>
 <code class="signature">protected abstract  <a href="../../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> <strong>getDispatcher</strong>()</code>
 <div class="details">
@@ -215,7 +211,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 261</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 283</div>
 <h3 id="getStatusColorCode()">getStatusColorCode</h3>
 <code class="signature">protected  integer <strong>getStatusColorCode</strong>(string status)</code>
 <div class="details">
@@ -229,7 +225,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 187</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 209</div>
 <h3 id="getTranslator()">getTranslator</h3>
 <code class="signature">protected  Symfony\Component\Translation\TranslatorInterface <strong>getTranslator</strong>()</code>
 <div class="details">
@@ -237,7 +233,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 177</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 199</div>
 <h3 id="isColorsAllowed()">isColorsAllowed</h3>
 <code class="signature">protected  boolean <strong>isColorsAllowed</strong>()</code>
 <div class="details">
@@ -245,7 +241,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 296</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 318</div>
 <h3 id="printLineSourceComment()">printLineSourceComment</h3>
 <code class="signature">protected  void <strong>printLineSourceComment</strong>(integer lineLength, string file, integer line)</code>
 <div class="details">
@@ -259,7 +255,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 135</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 157</div>
 <h3 id="printSnippets()">printSnippets</h3>
 <code class="signature">public  void <strong>printSnippets</strong>(Event event)</code>
 <div class="details">
@@ -271,7 +267,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 79</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 97</div>
 <h3 id="printStatistics()">printStatistics</h3>
 <code class="signature">public  void <strong>printStatistics</strong>(Event event)</code>
 <div class="details">
@@ -283,7 +279,19 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 53</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 55</div>
+<h3 id="setSupportPath()">setSupportPath</h3>
+<code class="signature">public  void <strong>setSupportPath</strong>(mixed path)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/formatterinterface.html">FormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 63</div>
 <h3 id="setTranslator()">setTranslator</h3>
 <code class="signature">public  void <strong>setTranslator</strong>(mixed translator)</code>
 <div class="details">
@@ -295,7 +303,31 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 160</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 71</div>
+<h3 id="showColors()">showColors</h3>
+<code class="signature">public  void <strong>showColors</strong>(mixed colors)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/colorableformatterinterface.html">ColorableFormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 79</div>
+<h3 id="showTimer()">showTimer</h3>
+<code class="signature">public  void <strong>showTimer</strong>(mixed timer)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/timableformatterinterface.html">TimableFormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 182</div>
 <h3 id="trimFilename()">trimFilename</h3>
 <code class="signature">public static  string <strong>trimFilename</strong>(string filename)</code>
 <div class="details">
@@ -309,7 +341,7 @@ Implements basic console printing operations.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 246</div>
+<div class="location">/Everzet/Behat/Output/Formatter/ConsoleFormatter.php at line 268</div>
 <h3 id="write()">write</h3>
 <code class="signature">protected  void <strong>write</strong>(string string, integer|string result, boolean newline)</code>
 <div class="details">

@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Fri, 22 Oct 2010 18:30:17 +0300">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
 <link rel="start" href="../../../overview-summary.html">
@@ -37,7 +37,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <hr>
 
 <div class="qualifiedName">Everzet\Behat\Filter\TagFilter</div>
-<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 22</div>
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 26</div>
 
 <h1>Class TagFilter</h1>
 
@@ -67,17 +67,33 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#filterScenarios()">filterScenarios</a>(Event event, array scenarios)</p><p class="description">Filter scenarios by tags.</p></td>
 </tr>
 <tr>
+<td class="type">protected  void</td>
+<td class="description"><p class="name"><a href="#isClosuresMatchFilter()">isClosuresMatchFilter</a>(Closure hasTagCheck, Closure hasntTagCheck, string filter)</p><p class="description">Check If Passed Has/Hasnt Closures Passes With Filter.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#isFeatureMatchFilter()">isFeatureMatchFilter</a>(<a href="../../../everzet/gherkin/node/featurenode.html">FeatureNode</a> feature, string filter)</p><p class="description">Check If Feature Matches Specified Filter.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#isScenarioMatchFilter()">isScenarioMatchFilter</a>(ScenarioNode|OutlineNode scenario, string filter)</p><p class="description">Check If Scenario Or Outline Matches Specified Filter.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#isStepMatchFilter()">isStepMatchFilter</a>(<a href="../../../everzet/gherkin/node/stepnode.html">StepNode</a> step, string filter)</p><p class="description">Check If Step Matches Specified Filter.</p></td>
+</tr>
+<tr>
 <td class="type"> void</td>
 <td class="description"><p class="name"><a href="#registerListeners()">registerListeners</a>(mixed dispatcher)</p><p class="description"></p></td>
 </tr>
 <tr>
 <td class="type"> void</td>
-<td class="description"><p class="name"><a href="#setTags()">setTags</a>(string tags)</p><p class="description">Set tags to filter.</p></td>
+<td class="description"><p class="name"><a href="#setFilterString()">setFilterString</a>(mixed filterString, string tags)</p><p class="description">Set filtering string.</p></td>
 </tr>
 </table>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 52</div>
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 56</div>
 <h3 id="filterScenarios()">filterScenarios</h3>
 <code class="signature">public  array <strong>filterScenarios</strong>(Event event, array scenarios)</code>
 <div class="details">
@@ -92,7 +108,60 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 39</div>
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 142</div>
+<h3 id="isClosuresMatchFilter()">isClosuresMatchFilter</h3>
+<code class="signature">protected  void <strong>isClosuresMatchFilter</strong>(Closure hasTagCheck, Closure hasntTagCheck, string filter)</code>
+<div class="details">
+<p>Check If Passed Has/Hasnt Closures Passes With Filter.</p><dl>
+<dt>Parameters:</dt>
+<dd>hasTagCheck - closure to check that something has got tag</dd>
+<dd>hasntTagCheck - closure to check that something hasn't got tag</dd>
+<dd>filter - filter string</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 79</div>
+<h3 id="isFeatureMatchFilter()">isFeatureMatchFilter</h3>
+<code class="signature">public  void <strong>isFeatureMatchFilter</strong>(<a href="../../../everzet/gherkin/node/featurenode.html">FeatureNode</a> feature, string filter)</code>
+<div class="details">
+<p>Check If Feature Matches Specified Filter.</p><dl>
+<dt>Parameters:</dt>
+<dd>feature - feature</dd>
+<dd>filter - filter string (optional)</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 98</div>
+<h3 id="isScenarioMatchFilter()">isScenarioMatchFilter</h3>
+<code class="signature">public  void <strong>isScenarioMatchFilter</strong>(ScenarioNode|OutlineNode scenario, string filter)</code>
+<div class="details">
+<p>Check If Scenario Or Outline Matches Specified Filter.</p><dl>
+<dt>Parameters:</dt>
+<dd>scenario - scenario or outline</dd>
+<dd>filter - filter string (optional)</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 119</div>
+<h3 id="isStepMatchFilter()">isStepMatchFilter</h3>
+<code class="signature">public  void <strong>isStepMatchFilter</strong>(<a href="../../../everzet/gherkin/node/stepnode.html">StepNode</a> step, string filter)</code>
+<div class="details">
+<p>Check If Step Matches Specified Filter.</p><dl>
+<dt>Parameters:</dt>
+<dd>step - step</dd>
+<dd>filter - filter string (optional)</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 43</div>
 <h3 id="registerListeners()">registerListeners</h3>
 <code class="signature">public  void <strong>registerListeners</strong>(mixed dispatcher)</code>
 <div class="details">
@@ -104,11 +173,11 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 31</div>
-<h3 id="setTags()">setTags</h3>
-<code class="signature">public  void <strong>setTags</strong>(string tags)</code>
+<div class="location">/Everzet/Behat/Filter/TagFilter.php at line 35</div>
+<h3 id="setFilterString()">setFilterString</h3>
+<code class="signature">public  void <strong>setFilterString</strong>(mixed filterString, string tags)</code>
 <div class="details">
-<p>Set tags to filter.</p><dl>
+<p>Set filtering string.</p><dl>
 <dt>Parameters:</dt>
 <dd>tags - tags filter string</dd>
 </dl>

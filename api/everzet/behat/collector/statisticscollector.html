@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Fri, 22 Oct 2010 18:30:17 +0300">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
 <link rel="start" href="../../../overview-summary.html">
@@ -78,12 +78,20 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#collectStepStats()">collectStepStats</a>(Event event)</p><p class="description">Listens to `step.run.after` events & collect stats.</p></td>
 </tr>
 <tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#finishTimer()">finishTimer</a>()</p><p class="description">Stop suite timer.</p></td>
+</tr>
+<tr>
 <td class="type"> array</td>
 <td class="description"><p class="name"><a href="#getDefinitionsSnippets()">getDefinitionsSnippets</a>()</p><p class="description">Return array of definition snippets for undefined steps.</p></td>
 </tr>
 <tr>
 <td class="type"> array</td>
 <td class="description"><p class="name"><a href="#getFailedStepsEvents()">getFailedStepsEvents</a>()</p><p class="description">Return array of failed steps events.</p></td>
+</tr>
+<tr>
+<td class="type"> integer</td>
+<td class="description"><p class="name"><a href="#getLastScenarioTime()">getLastScenarioTime</a>()</p><p class="description">Return last scenario execution time.</p></td>
 </tr>
 <tr>
 <td class="type"> array</td>
@@ -106,6 +114,14 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#getStepsStatuses()">getStepsStatuses</a>()</p><p class="description">Return associative array of steps statuses count.</p></td>
 </tr>
 <tr>
+<td class="type"> integer</td>
+<td class="description"><p class="name"><a href="#getTotalTime()">getTotalTime</a>()</p><p class="description">Return suite total execution time.</p></td>
+</tr>
+<tr>
+<td class="type"> boolean</td>
+<td class="description"><p class="name"><a href="#isPassed()">isPassed</a>()</p><p class="description">Return true if suite passed.</p></td>
+</tr>
+<tr>
 <td class="type"> void</td>
 <td class="description"><p class="name"><a href="#pause()">pause</a>()</p><p class="description">Pause collecting.</p></td>
 </tr>
@@ -117,10 +133,18 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="type"> void</td>
 <td class="description"><p class="name"><a href="#resume()">resume</a>()</p><p class="description">Resume collecting.</p></td>
 </tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#startScenarioTimer()">startScenarioTimer</a>(Event event)</p><p class="description">Listens to `scenario.run.before` & `outline.sub.run.before` events & start scenario timers.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#startTimer()">startTimer</a>()</p><p class="description">Start suite timer.</p></td>
+</tr>
 </table>
 
 <h2 id="detail_constr">Constructor Detail</h2>
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 48</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 53</div>
 <h3 id="StatisticsCollector()">StatisticsCollector</h3>
 <code class="signature">public <strong>StatisticsCollector</strong>()</code>
 <div class="details">
@@ -129,7 +153,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <hr>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 161</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 224</div>
 <h3 id="collectScenarioStats()">collectScenarioStats</h3>
 <code class="signature">public  void <strong>collectScenarioStats</strong>(Event event)</code>
 <div class="details">
@@ -141,7 +165,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 174</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 242</div>
 <h3 id="collectStepStats()">collectStepStats</h3>
 <code class="signature">public  void <strong>collectStepStats</strong>(Event event)</code>
 <div class="details">
@@ -153,7 +177,15 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 105</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 76</div>
+<h3 id="finishTimer()">finishTimer</h3>
+<code class="signature">public  void <strong>finishTimer</strong>()</code>
+<div class="details">
+<p>Stop suite timer.</p></div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 156</div>
 <h3 id="getDefinitionsSnippets()">getDefinitionsSnippets</h3>
 <code class="signature">public  array <strong>getDefinitionsSnippets</strong>()</code>
 <div class="details">
@@ -165,7 +197,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 115</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 166</div>
 <h3 id="getFailedStepsEvents()">getFailedStepsEvents</h3>
 <code class="signature">public  array <strong>getFailedStepsEvents</strong>()</code>
 <div class="details">
@@ -173,7 +205,19 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 125</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 96</div>
+<h3 id="getLastScenarioTime()">getLastScenarioTime</h3>
+<code class="signature">public  integer <strong>getLastScenarioTime</strong>()</code>
+<div class="details">
+<p>Return last scenario execution time.</p><dl>
+<dt>Returns:</dt>
+<dd>miliseconds</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 176</div>
 <h3 id="getPendingStepsEvents()">getPendingStepsEvents</h3>
 <code class="signature">public  array <strong>getPendingStepsEvents</strong>()</code>
 <div class="details">
@@ -181,7 +225,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 75</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 126</div>
 <h3 id="getScenariosCount()">getScenariosCount</h3>
 <code class="signature">public  integer <strong>getScenariosCount</strong>()</code>
 <div class="details">
@@ -189,7 +233,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 95</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 146</div>
 <h3 id="getScenariosStatuses()">getScenariosStatuses</h3>
 <code class="signature">public  array <strong>getScenariosStatuses</strong>()</code>
 <div class="details">
@@ -201,7 +245,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 65</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 116</div>
 <h3 id="getStepsCount()">getStepsCount</h3>
 <code class="signature">public  integer <strong>getStepsCount</strong>()</code>
 <div class="details">
@@ -209,7 +253,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 85</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 136</div>
 <h3 id="getStepsStatuses()">getStepsStatuses</h3>
 <code class="signature">public  array <strong>getStepsStatuses</strong>()</code>
 <div class="details">
@@ -221,7 +265,27 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 143</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 86</div>
+<h3 id="getTotalTime()">getTotalTime</h3>
+<code class="signature">public  integer <strong>getTotalTime</strong>()</code>
+<div class="details">
+<p>Return suite total execution time.</p><dl>
+<dt>Returns:</dt>
+<dd>miliseconds</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 106</div>
+<h3 id="isPassed()">isPassed</h3>
+<code class="signature">public  boolean <strong>isPassed</strong>()</code>
+<div class="details">
+<p>Return true if suite passed.</p></div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 196</div>
 <h3 id="pause()">pause</h3>
 <code class="signature">public  void <strong>pause</strong>()</code>
 <div class="details">
@@ -229,7 +293,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 133</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 184</div>
 <h3 id="registerListeners()">registerListeners</h3>
 <code class="signature">public  void <strong>registerListeners</strong>(mixed dispatcher)</code>
 <div class="details">
@@ -241,11 +305,31 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 151</div>
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 204</div>
 <h3 id="resume()">resume</h3>
 <code class="signature">public  void <strong>resume</strong>()</code>
 <div class="details">
 <p>Resume collecting.</p></div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 214</div>
+<h3 id="startScenarioTimer()">startScenarioTimer</h3>
+<code class="signature">public  void <strong>startScenarioTimer</strong>(Event event)</code>
+<div class="details">
+<p>Listens to `scenario.run.before` & `outline.sub.run.before` events & start scenario timers.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Collector/StatisticsCollector.php at line 68</div>
+<h3 id="startTimer()">startTimer</h3>
+<code class="signature">public  void <strong>startTimer</strong>()</code>
+<div class="details">
+<p>Start suite timer.</p></div>
 
 <hr>
 

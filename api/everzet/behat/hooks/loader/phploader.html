@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Fri, 22 Oct 2010 18:30:17 +0300">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
 <link rel="start" href="../../../../overview-summary.html">
@@ -64,11 +64,35 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <tr><th colspan="2">Method Summary</th></tr>
 <tr>
 <td class="type"> void</td>
-<td class="description"><p class="name"><a href="#after()">after</a>(string context, string callback)</p><p class="description">Hook to `*.after` event.</p></td>
+<td class="description"><p class="name"><a href="#afterFeature()">afterFeature</a>(string filter, callback callback)</p><p class="description">Hook After Feature Run.</p></td>
 </tr>
 <tr>
 <td class="type"> void</td>
-<td class="description"><p class="name"><a href="#before()">before</a>(string context, string callback)</p><p class="description">Hook to `*.before` event.</p></td>
+<td class="description"><p class="name"><a href="#afterScenario()">afterScenario</a>(string filter, callback callback)</p><p class="description">Hook After Scenario Run.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#afterStep()">afterStep</a>(mixed filter, callback callback)</p><p class="description">Hook After Step Run.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#afterSuite()">afterSuite</a>(callback callback)</p><p class="description">Hook After Suite Run.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#beforeFeature()">beforeFeature</a>(string filter, callback callback)</p><p class="description">Hook Before Feature Run.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#beforeScenario()">beforeScenario</a>(string filter, callback callback)</p><p class="description">Hook Before Scenario Run.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#beforeStep()">beforeStep</a>(mixed filter, callback callback)</p><p class="description">Hook Before Step Run.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#beforeSuite()">beforeSuite</a>(callback callback)</p><p class="description">Hook Before Suite Run.</p></td>
 </tr>
 <tr>
 <td class="type"> array</td>
@@ -77,27 +101,103 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </table>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 54</div>
-<h3 id="after()">after</h3>
-<code class="signature">public  void <strong>after</strong>(string context, string callback)</code>
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 84</div>
+<h3 id="afterFeature()">afterFeature</h3>
+<code class="signature">public  void <strong>afterFeature</strong>(string filter, callback callback)</code>
 <div class="details">
-<p>Hook to `*.after` event.</p><dl>
+<p>Hook After Feature Run.</p><dl>
 <dt>Parameters:</dt>
-<dd>context - context name (f.e. features.load => features.load.after event)</dd>
-<dd>callback - callback</dd>
+<dd>filter - filter string (tags or name)</dd>
+<dd>callback - hook callback</dd>
 </dl>
 </div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 43</div>
-<h3 id="before()">before</h3>
-<code class="signature">public  void <strong>before</strong>(string context, string callback)</code>
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 106</div>
+<h3 id="afterScenario()">afterScenario</h3>
+<code class="signature">public  void <strong>afterScenario</strong>(string filter, callback callback)</code>
 <div class="details">
-<p>Hook to `*.before` event.</p><dl>
+<p>Hook After Scenario Run.</p><dl>
 <dt>Parameters:</dt>
-<dd>context - context name (f.e. features.load => features.load.before event)</dd>
-<dd>callback - callback</dd>
+<dd>filter - filter string (tags or name)</dd>
+<dd>callback - hook callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 128</div>
+<h3 id="afterStep()">afterStep</h3>
+<code class="signature">public  void <strong>afterStep</strong>(mixed filter, callback callback)</code>
+<div class="details">
+<p>Hook After Step Run.</p><dl>
+<dt>Parameters:</dt>
+<dd>filter - filter string (tags or name)</dd>
+<dd>callback - hook callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 62</div>
+<h3 id="afterSuite()">afterSuite</h3>
+<code class="signature">public  void <strong>afterSuite</strong>(callback callback)</code>
+<div class="details">
+<p>Hook After Suite Run.</p><dl>
+<dt>Parameters:</dt>
+<dd>callback - hook callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 73</div>
+<h3 id="beforeFeature()">beforeFeature</h3>
+<code class="signature">public  void <strong>beforeFeature</strong>(string filter, callback callback)</code>
+<div class="details">
+<p>Hook Before Feature Run.</p><dl>
+<dt>Parameters:</dt>
+<dd>filter - filter string (tags or name)</dd>
+<dd>callback - hook callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 95</div>
+<h3 id="beforeScenario()">beforeScenario</h3>
+<code class="signature">public  void <strong>beforeScenario</strong>(string filter, callback callback)</code>
+<div class="details">
+<p>Hook Before Scenario Run.</p><dl>
+<dt>Parameters:</dt>
+<dd>filter - filter string (tags or name)</dd>
+<dd>callback - hook callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 117</div>
+<h3 id="beforeStep()">beforeStep</h3>
+<code class="signature">public  void <strong>beforeStep</strong>(mixed filter, callback callback)</code>
+<div class="details">
+<p>Hook Before Step Run.</p><dl>
+<dt>Parameters:</dt>
+<dd>filter - filter string (tags or name)</dd>
+<dd>callback - hook callback</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/Loader/PHPLoader.php at line 52</div>
+<h3 id="beforeSuite()">beforeSuite</h3>
+<code class="signature">public  void <strong>beforeSuite</strong>(callback callback)</code>
+<div class="details">
+<p>Hook Before Suite Run.</p><dl>
+<dt>Parameters:</dt>
+<dd>callback - hook callback</dd>
 </dl>
 </div>
 

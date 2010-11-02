@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
+
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="start" href="../../../../overview-summary.html">
+
+<title>HTMLFormatter (Behat)</title>
+
+</head>
+<body id="definition" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>Behat</h1>
+<ul>
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../everzet/behat/output/formatter/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../../../../everzet/behat/output/formatter/package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../../../index.html" target="_top">Frames</a>
+<a href="../../../../everzet/behat/output/formatter/htmlformatter.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<div class="qualifiedName">Everzet\Behat\Output\Formatter\HTMLFormatter</div>
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 37</div>
+
+<h1>Class HTMLFormatter</h1>
+
+<pre class="tree"><strong>HTMLFormatter</strong><br /></pre>
+
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd>FormatterInterface ContainerAwareFormatterInterface </dt>
+</dl>
+
+<hr>
+
+<p class="signature">public  class <strong>HTMLFormatter</strong></p>
+
+<div class="comment" id="overview_description"><p>HTML Formatter.
+Implements HTML output formatter.</p></div>
+
+<dl>
+<dt>Author:</dt>
+<dd>Konstantin Kudryashov <ever.zet@gmail.com></dd>
+</dl>
+<hr>
+
+<table id="summary_constr">
+<tr><th colspan="2">Constructor Summary</th></tr>
+<tr>
+<td class="description"><p class="name"><a href="#HTMLFormatter()">HTMLFormatter</a>()</p></td>
+</tr>
+</table>
+
+<table id="summary_method">
+<tr><th colspan="2">Method Summary</th></tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#flushHTML()">flushHTML</a>(Event event)</p><p class="description">Listen to `suite.run.after` event & print generated markup to console or file.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getHTMLTemplate()">getHTMLTemplate</a>()</p><p class="description">Get HTML body template for the output.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getKeywordHtml()">getKeywordHtml</a>(string keyword, string locale)</p><p class="description">Get keyword HTML representation.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getSourcePathHtml()">getSourcePathHtml</a>(string file, string line)</p><p class="description">Get source HTML representation.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getTableHtml()">getTableHtml</a>(<a href="../../../../everzet/gherkin/node/tablenode.html">TableNode</a> table, string class)</p><p class="description">Get TableNode HTML representation.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getTableRow()">getTableRow</a>(array row, string class)</p><p class="description">Get table row HTML representation.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getTagsHtml()">getTagsHtml</a>(Node node)</p><p class="description">Get node tags HTML representation.</p></td>
+</tr>
+<tr>
+<td class="type">protected  string</td>
+<td class="description"><p class="name"><a href="#getTitleHtml()">getTitleHtml</a>(string title)</p><p class="description">Get title HTML representation.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printBackgroundFooter()">printBackgroundFooter</a>(Event event)</p><p class="description">Listen to `background.run.after` event & print background footer.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printBackgroundHeader()">printBackgroundHeader</a>(Event event)</p><p class="description">Listen to `background.run.before` event & print background header.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printFeatureFooter()">printFeatureFooter</a>(Event event)</p><p class="description">Listen to `feature.run.after` event & print feature footer.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printFeatureHeader()">printFeatureHeader</a>(Event event)</p><p class="description">Listen to `feature.run.before` event & print feature header.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printOutlineFooter()">printOutlineFooter</a>(Event event)</p><p class="description">Listen to `outline.run.after` event & print outline footer.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printOutlineHeader()">printOutlineHeader</a>(Event event)</p><p class="description">Listen to `outline.run.before` event & print outline header.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printOutlineSubResult()">printOutlineSubResult</a>(Event event)</p><p class="description">Listen to `outline.sub.run.after` event & print outline subscenario results.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printScenarioFooter()">printScenarioFooter</a>(Event event)</p><p class="description">Listen to `scenario.run.after` event & print scenario footer.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printScenarioHeader()">printScenarioHeader</a>(Event event)</p><p class="description">Listen to `scenario.run.before` event & print scenario header.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#printStep()">printStep</a>(Event event)</p><p class="description">Listen to `step.run.after` event & print step run information.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#registerListeners()">registerListeners</a>(mixed dispatcher)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setContainer()">setContainer</a>(mixed container)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setSupportPath()">setSupportPath</a>(mixed path)</p><p class="description"></p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setTranslator()">setTranslator</a>(mixed translator)</p><p class="description"></p></td>
+</tr>
+</table>
+
+<h2 id="detail_constr">Constructor Detail</h2>
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 50</div>
+<h3 id="HTMLFormatter()">HTMLFormatter</h3>
+<code class="signature">public <strong>HTMLFormatter</strong>()</code>
+<div class="details">
+</div>
+
+<hr>
+
+<h2 id="detail_method">Method Detail</h2>
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 400</div>
+<h3 id="flushHTML()">flushHTML</h3>
+<code class="signature">public  void <strong>flushHTML</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `suite.run.after` event & print generated markup to console or file.</p></div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 577</div>
+<h3 id="getHTMLTemplate()">getHTMLTemplate</h3>
+<code class="signature">protected  string <strong>getHTMLTemplate</strong>()</code>
+<div class="details">
+<p>Get HTML body template for the output.</p><dl>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 479</div>
+<h3 id="getKeywordHtml()">getKeywordHtml</h3>
+<code class="signature">protected  string <strong>getKeywordHtml</strong>(string keyword, string locale)</code>
+<div class="details">
+<p>Get keyword HTML representation.</p><dl>
+<dt>Parameters:</dt>
+<dd>keyword - keyword</dd>
+<dd>locale - locale</dd>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 508</div>
+<h3 id="getSourcePathHtml()">getSourcePathHtml</h3>
+<code class="signature">protected  string <strong>getSourcePathHtml</strong>(string file, string line)</code>
+<div class="details">
+<p>Get source HTML representation.</p><dl>
+<dt>Parameters:</dt>
+<dd>file - filename</dd>
+<dd>line - lineno</dd>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 531</div>
+<h3 id="getTableHtml()">getTableHtml</h3>
+<code class="signature">protected  string <strong>getTableHtml</strong>(<a href="../../../../everzet/gherkin/node/tablenode.html">TableNode</a> table, string class)</code>
+<div class="details">
+<p>Get TableNode HTML representation.</p><dl>
+<dt>Parameters:</dt>
+<dd>table - table node</dd>
+<dd>class - optional css class</dd>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 556</div>
+<h3 id="getTableRow()">getTableRow</h3>
+<code class="signature">protected  string <strong>getTableRow</strong>(array row, string class)</code>
+<div class="details">
+<p>Get table row HTML representation.</p><dl>
+<dt>Parameters:</dt>
+<dd>row - table row as array</dd>
+<dd>class - optional css class</dd>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 456</div>
+<h3 id="getTagsHtml()">getTagsHtml</h3>
+<code class="signature">protected  string <strong>getTagsHtml</strong>(Node node)</code>
+<div class="details">
+<p>Get node tags HTML representation.</p><dl>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 495</div>
+<h3 id="getTitleHtml()">getTitleHtml</h3>
+<code class="signature">protected  string <strong>getTitleHtml</strong>(string title)</code>
+<div class="details">
+<p>Get title HTML representation.</p><dl>
+<dt>Parameters:</dt>
+<dd>title - title</dd>
+<dt>Returns:</dt>
+<dd>HTML</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 327</div>
+<h3 id="printBackgroundFooter()">printBackgroundFooter</h3>
+<code class="signature">public  void <strong>printBackgroundFooter</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `background.run.after` event & print background footer.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 301</div>
+<h3 id="printBackgroundHeader()">printBackgroundHeader</h3>
+<code class="signature">public  void <strong>printBackgroundHeader</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `background.run.before` event & print background header.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 166</div>
+<h3 id="printFeatureFooter()">printFeatureFooter</h3>
+<code class="signature">public  void <strong>printFeatureFooter</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `feature.run.after` event & print feature footer.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 115</div>
+<h3 id="printFeatureHeader()">printFeatureHeader</h3>
+<code class="signature">public  void <strong>printFeatureHeader</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `feature.run.before` event & print feature header.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 253</div>
+<h3 id="printOutlineFooter()">printOutlineFooter</h3>
+<code class="signature">public  void <strong>printOutlineFooter</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `outline.run.after` event & print outline footer.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 176</div>
+<h3 id="printOutlineHeader()">printOutlineHeader</h3>
+<code class="signature">public  void <strong>printOutlineHeader</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `outline.run.before` event & print outline header.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 228</div>
+<h3 id="printOutlineSubResult()">printOutlineSubResult</h3>
+<code class="signature">public  void <strong>printOutlineSubResult</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `outline.sub.run.after` event & print outline subscenario results.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 290</div>
+<h3 id="printScenarioFooter()">printScenarioFooter</h3>
+<code class="signature">public  void <strong>printScenarioFooter</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `scenario.run.after` event & print scenario footer.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 266</div>
+<h3 id="printScenarioHeader()">printScenarioHeader</h3>
+<code class="signature">public  void <strong>printScenarioHeader</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `scenario.run.before` event & print scenario header.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 340</div>
+<h3 id="printStep()">printStep</h3>
+<code class="signature">public  void <strong>printStep</strong>(Event event)</code>
+<div class="details">
+<p>Listen to `step.run.after` event & print step run information.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - notified event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 88</div>
+<h3 id="registerListeners()">registerListeners</h3>
+<code class="signature">public  void <strong>registerListeners</strong>(mixed dispatcher)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/formatterinterface.html">FormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 72</div>
+<h3 id="setContainer()">setContainer</h3>
+<code class="signature">public  void <strong>setContainer</strong>(mixed container)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/containerawareformatterinterface.html">ContainerAwareFormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 64</div>
+<h3 id="setSupportPath()">setSupportPath</h3>
+<code class="signature">public  void <strong>setSupportPath</strong>(mixed path)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/formatterinterface.html">FormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/Formatter/HTMLFormatter.php at line 80</div>
+<h3 id="setTranslator()">setTranslator</h3>
+<code class="signature">public  void <strong>setTranslator</strong>(mixed translator)</code>
+<div class="details">
+<p></p><dl>
+<dt>See Also:</dt>
+<dd><a href="../../../../everzet/behat/output/formatter/translatableformatterinterface.html">TranslatableFormatterInterface</a></dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="header">
+<h1>Behat</h1>
+<ul>
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="../../../../everzet/behat/output/formatter/package-summary.html">Namespace</a></li>
+<li class="active">Class</li>
+<li><a href="../../../../everzet/behat/output/formatter/package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../../../index.html" target="_top">Frames</a>
+<a href="../../../../everzet/behat/output/formatter/htmlformatter.html" target="_top">No frames</a>
+</div>
+<div class="small_links">
+Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
+Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> | <a href="#summary_constr">Constr</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>

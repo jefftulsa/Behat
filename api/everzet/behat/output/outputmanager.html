@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Fri, 22 Oct 2010 18:30:17 +0300">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
 <link rel="start" href="../../../overview-summary.html">
@@ -37,7 +37,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <hr>
 
 <div class="qualifiedName">Everzet\Behat\Output\OutputManager</div>
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 30</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 31</div>
 
 <h1>Class OutputManager</h1>
 
@@ -71,10 +71,6 @@ Manages Formatters & Prints Output.</p></div>
 </tr>
 <tr>
 <td class="type"> void</td>
-<td class="description"><p class="name"><a href="#allowColors()">allowColors</a>(boolean colors)</p><p class="description">Allow colors in output.</p></td>
-</tr>
-<tr>
-<td class="type"> void</td>
 <td class="description"><p class="name"><a href="#beVerbose()">beVerbose</a>(boolean verbose)</p><p class="description">Set output to be verbose.</p></td>
 </tr>
 <tr>
@@ -100,12 +96,28 @@ Manages Formatters & Prints Output.</p></div>
 </tr>
 <tr>
 <td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setOutputPath()">setOutputPath</a>(string path)</p><p class="description">Set output path for the formatters.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setSupportPath()">setSupportPath</a>(string path)</p><p class="description">Set support directory path (used for templates).</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#showColors()">showColors</a>(boolean colors)</p><p class="description">Allow colors in output.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#showTimer()">showTimer</a>(boolean timer)</p><p class="description">Show timer in output.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
 <td class="description"><p class="name"><a href="#write()">write</a>(Event event)</p><p class="description">Print string to console on `behat.output.write` event.</p></td>
 </tr>
 </table>
 
 <h2 id="detail_constr">Constructor Detail</h2>
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 48</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 52</div>
 <h3 id="OutputManager()">OutputManager</h3>
 <code class="signature">public <strong>OutputManager</strong>(Container container)</code>
 <div class="details">
@@ -118,7 +130,7 @@ Manages Formatters & Prints Output.</p></div>
 <hr>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 99</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 133</div>
 <h3 id="addFormatter()">addFormatter</h3>
 <code class="signature">public  void <strong>addFormatter</strong>(string name, <a href="../../../everzet/behat/output/formatter/formatterinterface.html">FormatterInterface</a> formatter)</code>
 <div class="details">
@@ -131,19 +143,7 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 68</div>
-<h3 id="allowColors()">allowColors</h3>
-<code class="signature">public  void <strong>allowColors</strong>(boolean colors)</code>
-<div class="details">
-<p>Allow colors in output.</p><dl>
-<dt>Parameters:</dt>
-<dd>colors - allow colors in output</dd>
-</dl>
-</div>
-
-<hr>
-
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 78</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 112</div>
 <h3 id="beVerbose()">beVerbose</h3>
 <code class="signature">public  void <strong>beVerbose</strong>(boolean verbose)</code>
 <div class="details">
@@ -155,7 +155,7 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 167</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 226</div>
 <h3 id="hasColorSupport()">hasColorSupport</h3>
 <code class="signature">protected  boolean <strong>hasColorSupport</strong>()</code>
 <div class="details">
@@ -168,7 +168,7 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 123</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 157</div>
 <h3 id="registerListeners()">registerListeners</h3>
 <code class="signature">public  void <strong>registerListeners</strong>(<a href="../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> dispatcher)</code>
 <div class="details">
@@ -180,7 +180,7 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 109</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 143</div>
 <h3 id="setFormatter()">setFormatter</h3>
 <code class="signature">public  void <strong>setFormatter</strong>(string name)</code>
 <div class="details">
@@ -192,7 +192,7 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 88</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 122</div>
 <h3 id="setLocale()">setLocale</h3>
 <code class="signature">public  void <strong>setLocale</strong>(string locale)</code>
 <div class="details">
@@ -204,7 +204,7 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 58</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 82</div>
 <h3 id="setOutput()">setOutput</h3>
 <code class="signature">public  void <strong>setOutput</strong>(OutputInterface output)</code>
 <div class="details">
@@ -216,7 +216,55 @@ Manages Formatters & Prints Output.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Output/OutputManager.php at line 152</div>
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 72</div>
+<h3 id="setOutputPath()">setOutputPath</h3>
+<code class="signature">public  void <strong>setOutputPath</strong>(string path)</code>
+<div class="details">
+<p>Set output path for the formatters.</p><dl>
+<dt>Parameters:</dt>
+<dd>path - output file/folder path</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 62</div>
+<h3 id="setSupportPath()">setSupportPath</h3>
+<code class="signature">public  void <strong>setSupportPath</strong>(string path)</code>
+<div class="details">
+<p>Set support directory path (used for templates).</p><dl>
+<dt>Parameters:</dt>
+<dd>path - path to support directory</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 92</div>
+<h3 id="showColors()">showColors</h3>
+<code class="signature">public  void <strong>showColors</strong>(boolean colors)</code>
+<div class="details">
+<p>Allow colors in output.</p><dl>
+<dt>Parameters:</dt>
+<dd>colors - allow colors in output</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 102</div>
+<h3 id="showTimer()">showTimer</h3>
+<code class="signature">public  void <strong>showTimer</strong>(boolean timer)</code>
+<div class="details">
+<p>Show timer in output.</p><dl>
+<dt>Parameters:</dt>
+<dd>timer - show timer in output</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Output/OutputManager.php at line 193</div>
 <h3 id="write()">write</h3>
 <code class="signature">public  void <strong>write</strong>(Event event)</code>
 <div class="details">

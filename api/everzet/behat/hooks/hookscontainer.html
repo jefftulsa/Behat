@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Fri, 22 Oct 2010 18:30:17 +0300">
+<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
 <link rel="start" href="../../../overview-summary.html">
@@ -37,7 +37,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <hr>
 
 <div class="qualifiedName">Everzet\Behat\Hooks\HooksContainer</div>
-<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 24</div>
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 25</div>
 
 <h1>Class HooksContainer</h1>
 
@@ -67,6 +67,26 @@ Loads & Initializates Hooks.</p></div>
 <td class="description"><p class="name"><a href="#addResource()">addResource</a>(string format, mixed resource)</p><p class="description">Add a resource.</p></td>
 </tr>
 <tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#fireFeatureHooks()">fireFeatureHooks</a>(Event event)</p><p class="description">Handle Feature Events & Fire Associated Hooks.</p></td>
+</tr>
+<tr>
+<td class="type">protected  void</td>
+<td class="description"><p class="name"><a href="#fireHooks()">fireHooks</a>(Event event, string name, Closure tagsFilter, Closure nameFilter)</p><p class="description">Fire Hooks With Specified Name & Filter.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#fireScenarioHooks()">fireScenarioHooks</a>(Event event)</p><p class="description">Handle Scenario Events & Fire Associated Hooks.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#fireStepHooks()">fireStepHooks</a>(Event event)</p><p class="description">Handle Step Events & Fire Associated Hooks.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#fireSuiteHooks()">fireSuiteHooks</a>(Event event)</p><p class="description">Handle Suite Events & Fire Associated Hooks.</p></td>
+</tr>
+<tr>
 <td class="type">protected  void</td>
 <td class="description"><p class="name"><a href="#loadHooks()">loadHooks</a>()</p><p class="description">Parse step hooks with added loaders.</p></td>
 </tr>
@@ -74,10 +94,18 @@ Loads & Initializates Hooks.</p></div>
 <td class="type"> void</td>
 <td class="description"><p class="name"><a href="#registerListeners()">registerListeners</a>(<a href="../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> dispatcher)</p><p class="description">Register Hooks Event Listeners.</p></td>
 </tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setNameFilter()">setNameFilter</a>(<a href="../../../everzet/behat/filter/filterinterface.html">FilterInterface</a> nameFilter)</p><p class="description">Set Name Filter Service.</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#setTagsFilter()">setTagsFilter</a>(<a href="../../../everzet/behat/filter/filterinterface.html">FilterInterface</a> tagsFilter)</p><p class="description">Set Tagged Hooks Filter Service.</p></td>
+</tr>
 </table>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 53</div>
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 226</div>
 <h3 id="addLoader()">addLoader</h3>
 <code class="signature">public  void <strong>addLoader</strong>(string format, <a href="../../../everzet/behat/features/loader/loaderinterface.html">LoaderInterface</a> loader)</code>
 <div class="details">
@@ -90,7 +118,7 @@ Loads & Initializates Hooks.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 64</div>
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 237</div>
 <h3 id="addResource()">addResource</h3>
 <code class="signature">public  void <strong>addResource</strong>(string format, mixed resource)</code>
 <div class="details">
@@ -103,7 +131,70 @@ Loads & Initializates Hooks.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 72</div>
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 104</div>
+<h3 id="fireFeatureHooks()">fireFeatureHooks</h3>
+<code class="signature">public  void <strong>fireFeatureHooks</strong>(Event event)</code>
+<div class="details">
+<p>Handle Feature Events & Fire Associated Hooks.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 199</div>
+<h3 id="fireHooks()">fireHooks</h3>
+<code class="signature">protected  void <strong>fireHooks</strong>(Event event, string name, Closure tagsFilter, Closure nameFilter)</code>
+<div class="details">
+<p>Fire Hooks With Specified Name & Filter.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - event to which hooks glued</dd>
+<dd>name - hooks name</dd>
+<dd>tagsFilter - tags filtering closure</dd>
+<dd>nameFilter - name filtering closure</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 134</div>
+<h3 id="fireScenarioHooks()">fireScenarioHooks</h3>
+<code class="signature">public  void <strong>fireScenarioHooks</strong>(Event event)</code>
+<div class="details">
+<p>Handle Scenario Events & Fire Associated Hooks.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 166</div>
+<h3 id="fireStepHooks()">fireStepHooks</h3>
+<code class="signature">public  void <strong>fireStepHooks</strong>(Event event)</code>
+<div class="details">
+<p>Handle Step Events & Fire Associated Hooks.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 85</div>
+<h3 id="fireSuiteHooks()">fireSuiteHooks</h3>
+<code class="signature">public  void <strong>fireSuiteHooks</strong>(Event event)</code>
+<div class="details">
+<p>Handle Suite Events & Fire Associated Hooks.</p><dl>
+<dt>Parameters:</dt>
+<dd>event - event</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 245</div>
 <h3 id="loadHooks()">loadHooks</h3>
 <code class="signature">protected  void <strong>loadHooks</strong>()</code>
 <div class="details">
@@ -111,13 +202,37 @@ Loads & Initializates Hooks.</p></div>
 
 <hr>
 
-<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 36</div>
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 58</div>
 <h3 id="registerListeners()">registerListeners</h3>
 <code class="signature">public  void <strong>registerListeners</strong>(<a href="../../../everzet/behat/eventdispatcher/eventdispatcher.html">EventDispatcher</a> dispatcher)</code>
 <div class="details">
 <p>Register Hooks Event Listeners.</p><dl>
 <dt>Parameters:</dt>
 <dd>dispatcher - event dispatcher</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 48</div>
+<h3 id="setNameFilter()">setNameFilter</h3>
+<code class="signature">public  void <strong>setNameFilter</strong>(<a href="../../../everzet/behat/filter/filterinterface.html">FilterInterface</a> nameFilter)</code>
+<div class="details">
+<p>Set Name Filter Service.</p><dl>
+<dt>Parameters:</dt>
+<dd>nameFilter - name filtering service</dd>
+</dl>
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Behat/Hooks/HooksContainer.php at line 38</div>
+<h3 id="setTagsFilter()">setTagsFilter</h3>
+<code class="signature">public  void <strong>setTagsFilter</strong>(<a href="../../../everzet/behat/filter/filterinterface.html">FilterInterface</a> tagsFilter)</code>
+<div class="details">
+<p>Set Tagged Hooks Filter Service.</p><dl>
+<dt>Parameters:</dt>
+<dd>tagsFilter - tags filter service</dd>
 </dl>
 </div>
 
