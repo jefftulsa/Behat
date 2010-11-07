@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
+<meta name="when" content="Sun, 07 Nov 2010 16:24:53 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
 <link rel="start" href="../../../overview-summary.html">
@@ -58,7 +58,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <table id="summary_constr">
 <tr><th colspan="2">Constructor Summary</th></tr>
 <tr>
-<td class="description"><p class="name"><a href="#TableNode()">TableNode</a>(mixed colSplitter)</p></td>
+<td class="description"><p class="name"><a href="#TableNode()">TableNode</a>(mixed table, mixed colSplitter)</p></td>
 </tr>
 </table>
 
@@ -89,6 +89,10 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#getRows()">getRows</a>()</p></td>
 </tr>
 <tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#getRowsHash()">getRowsHash</a>()</p></td>
+</tr>
+<tr>
 <td class="type">protected  void</td>
 <td class="description"><p class="name"><a href="#padRight()">padRight</a>(mixed text, mixed length)</p></td>
 </tr>
@@ -101,14 +105,14 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <h2 id="detail_constr">Constructor Detail</h2>
 <div class="location">/Everzet/Gherkin/Node/TableNode.php at line 23</div>
 <h3 id="TableNode()">TableNode</h3>
-<code class="signature">public <strong>TableNode</strong>(mixed colSplitter)</code>
+<code class="signature">public <strong>TableNode</strong>(mixed table, mixed colSplitter)</code>
 <div class="details">
 </div>
 
 <hr>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 28</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 36</div>
 <h3 id="addRow()">addRow</h3>
 <code class="signature">public  void <strong>addRow</strong>(mixed row)</code>
 <div class="details">
@@ -116,7 +120,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 66</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 80</div>
 <h3 id="getHash()">getHash</h3>
 <code class="signature">public  void <strong>getHash</strong>()</code>
 <div class="details">
@@ -124,7 +128,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 93</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 119</div>
 <h3 id="getMaxLengthForColumn()">getMaxLengthForColumn</h3>
 <code class="signature">protected  void <strong>getMaxLengthForColumn</strong>(mixed columnNum)</code>
 <div class="details">
@@ -132,7 +136,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 40</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 54</div>
 <h3 id="getRow()">getRow</h3>
 <code class="signature">public  void <strong>getRow</strong>(mixed rowNum)</code>
 <div class="details">
@@ -140,7 +144,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 45</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 59</div>
 <h3 id="getRowAsString()">getRowAsString</h3>
 <code class="signature">public  void <strong>getRowAsString</strong>(mixed rowNum)</code>
 <div class="details">
@@ -148,7 +152,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 35</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 49</div>
 <h3 id="getRows()">getRows</h3>
 <code class="signature">public  void <strong>getRows</strong>()</code>
 <div class="details">
@@ -156,7 +160,15 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 106</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 93</div>
+<h3 id="getRowsHash()">getRowsHash</h3>
+<code class="signature">public  void <strong>getRowsHash</strong>()</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 132</div>
 <h3 id="padRight()">padRight</h3>
 <code class="signature">protected  void <strong>padRight</strong>(mixed text, mixed length)</code>
 <div class="details">
@@ -164,7 +176,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 55</div>
+<div class="location">/Everzet/Gherkin/Node/TableNode.php at line 69</div>
 <h3 id="replaceTokens()">replaceTokens</h3>
 <code class="signature">public  void <strong>replaceTokens</strong>(mixed tokens)</code>
 <div class="details">

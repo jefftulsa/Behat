@@ -4,7 +4,7 @@
 <head>
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://phpdoctor.sourceforge.net/)">
-<meta name="when" content="Tue, 02 Nov 2010 16:05:57 +0200">
+<meta name="when" content="Sun, 07 Nov 2010 16:24:53 +0200">
 
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
 <link rel="start" href="../../../overview-summary.html">
@@ -58,7 +58,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <table id="summary_constr">
 <tr><th colspan="2">Constructor Summary</th></tr>
 <tr>
-<td class="description"><p class="name"><a href="#PyStringNode()">PyStringNode</a>(mixed ltrimCount)</p></td>
+<td class="description"><p class="name"><a href="#PyStringNode()">PyStringNode</a>(mixed string, mixed ltrimCount)</p></td>
 </tr>
 </table>
 
@@ -70,6 +70,10 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </tr>
 <tr>
 <td class="type"> void</td>
+<td class="description"><p class="name"><a href="#getLines()">getLines</a>()</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
 <td class="description"><p class="name"><a href="#replaceTokens()">replaceTokens</a>(mixed tokens)</p></td>
 </tr>
 </table>
@@ -77,14 +81,14 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <h2 id="detail_constr">Constructor Detail</h2>
 <div class="location">/Everzet/Gherkin/Node/PyStringNode.php at line 23</div>
 <h3 id="PyStringNode()">PyStringNode</h3>
-<code class="signature">public <strong>PyStringNode</strong>(mixed ltrimCount)</code>
+<code class="signature">public <strong>PyStringNode</strong>(mixed string, mixed ltrimCount)</code>
 <div class="details">
 </div>
 
 <hr>
 
 <h2 id="detail_method">Method Detail</h2>
-<div class="location">/Everzet/Gherkin/Node/PyStringNode.php at line 37</div>
+<div class="location">/Everzet/Gherkin/Node/PyStringNode.php at line 45</div>
 <h3 id="addLine()">addLine</h3>
 <code class="signature">public  void <strong>addLine</strong>(mixed line)</code>
 <div class="details">
@@ -92,7 +96,15 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<div class="location">/Everzet/Gherkin/Node/PyStringNode.php at line 28</div>
+<div class="location">/Everzet/Gherkin/Node/PyStringNode.php at line 50</div>
+<h3 id="getLines()">getLines</h3>
+<code class="signature">public  void <strong>getLines</strong>()</code>
+<div class="details">
+</div>
+
+<hr>
+
+<div class="location">/Everzet/Gherkin/Node/PyStringNode.php at line 36</div>
 <h3 id="replaceTokens()">replaceTokens</h3>
 <code class="signature">public  void <strong>replaceTokens</strong>(mixed tokens)</code>
 <div class="details">
